@@ -1,0 +1,35 @@
+{
+  "cli": {
+    "version": ">= 15.0.14",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
+      },
+      "channel": "development"
+    },
+    "production": {
+      "distribution": "store",
+      "android": {
+        "buildType": "app-bundle",
+        "image": "latest",
+        "prebuildCommand": "./eas-build-pre-install.sh"
+      },
+      "ios": {
+        "simulator": false
+      },
+      "autoIncrement": true,
+      "channel": "production"
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

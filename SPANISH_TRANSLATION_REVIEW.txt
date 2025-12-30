@@ -1,0 +1,1205 @@
+================================================================================
+UPSKIN APP - SPANISH TRANSLATION REVIEW DOCUMENT
+================================================================================
+
+This document contains all English-Spanish translation pairs organized by
+app context for proofreading. Please review and suggest improvements where needed.
+
+Target Audience: Spanish-speaking skincare users (primarily Latin America)
+Tone: Friendly, professional, encouraging
+
+NOTES FOR TRANSLATOR:
+- Please verify gender-neutral language where appropriate
+- Verify technical/dermatological terms are accurate
+- Ensure tone remains friendly and encouraging throughout
+- Flag any phrases that seem unnatural or awkward
+- Suggest improvements for clarity and user experience
+
+Thank you for your careful review!
+
+
+================================================================================
+1. COMMON ACTIONS & BUTTONS
+Context: General buttons and actions used throughout the app
+================================================================================
+
+English: Continue
+Spanish: Continuar
+
+English: Back
+Spanish: Atrás
+
+English: Next
+Spanish: Siguiente
+
+English: Done
+Spanish: Hecho
+
+English: Cancel
+Spanish: Cancelar
+
+English: Confirm
+Spanish: Confirmar
+
+English: Delete
+Spanish: Eliminar
+
+English: Save
+Spanish: Guardar
+
+English: Loading...
+Spanish: Cargando...
+
+English: Error
+Spanish: Error
+
+English: Success
+Spanish: Éxito
+
+English: Retry
+Spanish: Reintentar
+
+
+================================================================================
+2. FOYER / WELCOME SCREEN
+Context: First screen users see when opening the app
+================================================================================
+
+English: +2 million
+Spanish: Más de 2 millones
+
+English: Glowing Users
+Spanish: de usuarios radiantes
+
+English: Create the best version of your skin
+Spanish: Crea la mejor versión de tu piel
+
+English: Get Started
+Spanish: Comenzar
+
+--- User Testimonials ---
+
+English: "Simple explanation of the ingredients"
+Spanish: "Explicación simple de los ingredientes"
+
+English: "Finally got rid of adult acne lasting 3 years"
+Spanish: "Finalmente me deshice del acné adulto que duró 3 años"
+
+English: "Makes choosing skin products so much easier"
+Spanish: "Hace que elegir productos para la piel sea mucho más fácil"
+
+
+================================================================================
+3. NAVIGATION TABS
+Context: Bottom navigation bar with main app sections
+================================================================================
+
+English: Home
+Spanish: Inicio
+
+English: Daily
+Spanish: Diario
+
+English: Settings
+Spanish: Configuración
+
+
+================================================================================
+4. SETTINGS MENU
+Context: Settings page with various options and account management
+================================================================================
+
+English: Settings
+Spanish: Configuración
+
+English: Customizations
+Spanish: Personalizaciones
+
+English: General
+Spanish: General
+
+English: Skin Profile
+Spanish: Perfil de piel
+
+English: Customize Daily Routine
+Spanish: Personalizar rutina diaria
+
+English: Scan History
+Spanish: Historial de escaneos
+
+English: Share our App
+Spanish: Compartir nuestra app
+
+English: Terms and Conditions
+Spanish: Términos y Condiciones
+
+English: Privacy Policy
+Spanish: Política de Privacidad
+
+English: Support Email
+Spanish: Email de soporte
+
+English: Log out
+Spanish: Cerrar sesión
+
+English: Delete Account
+Spanish: Eliminar cuenta
+
+English: Account Deleted
+Spanish: Cuenta eliminada
+
+English: Your account has been successfully deleted.
+Spanish: Tu cuenta ha sido eliminada exitosamente.
+
+English: Language / Idioma
+Spanish: Idioma / Language
+
+
+================================================================================
+5. ONBOARDING FLOW - GENDER & AGE
+Context: User registration/onboarding questions
+================================================================================
+
+English: Welcome to UpSkin
+Spanish: Bienvenido a UpSkin
+
+English: Get Started
+Spanish: Comenzar
+
+English: Continue
+Spanish: Continuar
+
+English: What is your gender?
+Spanish: ¿Cuál es tu género?
+
+English: We'll build a custom plan just for you.
+Spanish: Crearemos un plan personalizado solo para ti.
+
+--- Gender Options ---
+
+English: Male
+Spanish: Masculino
+
+English: Female
+Spanish: Femenino
+
+English: Other
+Spanish: Otro
+
+--- Age Selection ---
+
+English: What is your age group?
+Spanish: ¿Cuál es tu grupo de edad?
+
+English: We'll build the plan most beneficial for you.
+Spanish: Crearemos el plan más beneficioso para ti.
+
+English: Under 21
+Spanish: Menor de 21
+
+English: 21 to 30
+Spanish: 21 a 30
+
+English: 31 to 40
+Spanish: 31 a 40
+
+English: 41 to 50
+Spanish: 41 a 50
+
+English: 51 to 60
+Spanish: 51 a 60
+
+English: 61 or above
+Spanish: 61 o más
+
+
+================================================================================
+6. ONBOARDING FLOW - SKIN TYPE
+Context: User selecting their skin type during onboarding
+================================================================================
+
+English: What is your skin type?
+Spanish: ¿Cuál es tu tipo de piel?
+
+English: We'll generate a plan your skin will love.
+Spanish: Generaremos un plan que tu piel amará.
+
+--- Skin Type Options ---
+
+English: Normal
+Spanish: Normal
+Description EN: Has barely visible pores, looks hydrated
+Description ES: Tiene poros apenas visibles, se ve hidratada
+
+English: Dry
+Spanish: Seca
+Description EN: Feels tight, might be flaky
+Description ES: Se siente tirante, podría descamarse
+
+English: Oily
+Spanish: Grasa
+Description EN: Has large pores and an overall shine
+Description ES: Tiene poros grandes y brillo general
+
+English: Combination
+Spanish: Mixta
+Description EN: Has an oily T-zone and dry or normal cheeks
+Description ES: Tiene zona T grasa y mejillas secas o normales
+
+English: I'm not sure
+Spanish: No lo sé
+Description EN: No worries! You'll find out with UpSkin face scan
+Description ES: ¡No te preocupes! Lo descubrirás con el escaneo facial de UpSkin
+
+
+================================================================================
+7. ONBOARDING FLOW - SKIN CONCERNS & GOALS
+Context: User selecting their skin issues and desired outcomes
+================================================================================
+
+English: What is your skin concern?
+Spanish: ¿Qué te preocupa sobre tu piel?
+
+English: You can choose more than one answer.
+Spanish: Puedes elegir más de una respuesta.
+
+--- Skin Concerns ---
+
+English: Acne
+Spanish: Acné
+
+English: Wrinkles
+Spanish: Arrugas
+
+English: Large pores
+Spanish: Poros grandes
+
+English: Pigmentation
+Spanish: Pigmentación
+
+English: Dry skin
+Spanish: Piel seca
+
+English: Redness
+Spanish: Enrojecimiento
+
+--- Skin Goals ---
+
+English: What is your skin goal?
+Spanish: ¿Cuál es tu objetivo para tu piel?
+
+English: Reduce acne or post-acne
+Spanish: Reducir acné o marcas del acné
+
+English: Minimize wrinkles, improve skin firmness
+Spanish: Minimizar arrugas, mejorar la firmeza de la piel
+
+English: Minimize pores
+Spanish: Minimizar poros
+
+English: Get rid of pigmentation
+Spanish: Eliminar la pigmentación
+
+English: Make skin more hydrated
+Spanish: Tener una piel más hidratada
+
+English: Reduce redness and irritation
+Spanish: Reducir enrojecimiento e irritación
+
+
+================================================================================
+8. ONBOARDING FLOW - REFERRAL SOURCE
+Context: Asking where user heard about the app
+================================================================================
+
+English: Where did you hear about UpSkin?
+Spanish: ¿Dónde escuchaste sobre UpSkin?
+
+--- Referral Sources ---
+
+English: Instagram
+Spanish: Instagram
+
+English: Facebook
+Spanish: Facebook
+
+English: TikTok
+Spanish: TikTok
+
+English: YouTube
+Spanish: YouTube
+
+English: Google
+Spanish: Google
+
+English: TV
+Spanish: TV
+
+English: None of these
+Spanish: Ninguna de estas
+
+
+================================================================================
+9. ONBOARDING FLOW - MOTIVATION & RATING
+Context: Building trust and collecting feedback
+================================================================================
+
+English: UpSkin creates long-term results
+Spanish: UpSkin crea resultados a largo plazo
+
+English: Give us a rating
+Spanish: Califícanos
+
+English: This app was designed for people like you.
+Spanish: Esta aplicación fue diseñada para personas como tú.
+
+English: + 2M UpSkin users
+Spanish: 2M de usuarios de UpSkin
+
+--- User Reviews ---
+
+Review 1 - Luke Garfield:
+English: Finally clear after 3 years of stubborn acne!! I didn't expect this app to work, but thankfully I gave it a shot and it worked out for me.
+Spanish: ¡Finalmente mi piel está libre de imperfecciones después de 3 años de acné persistente! No esperaba que esta aplicación funcionara, pero afortunadamente le di una oportunidad y funcionó para mí.
+
+Review 2 - Amelia Bar:
+English: Didn't realize how much junk I was putting on my face until this. Seriously - scan everything with UpSkin first!
+Spanish: No me di cuenta de cuánta basura estaba poniendo en mi cara hasta ahora. En serio, ¡escanea todo con UpSkin primero!
+
+
+================================================================================
+10. ONBOARDING FLOW - REFERRAL CODE
+Context: Optional referral code entry screen
+================================================================================
+
+English: Do you have a referral code?
+Spanish: ¿Tienes un código de referido?
+
+English: You can skip this step.
+Spanish: Puedes omitir este paso.
+
+English: Enter referral code
+Spanish: Ingresa código de referido
+
+--- Toast Messages ---
+
+English: Referral Code
+Spanish: Código de referido
+
+English: Verified Successfully
+Spanish: Verificado exitosamente
+
+English: Invalid referral code
+Spanish: Código de referido inválido
+
+
+================================================================================
+11. ONBOARDING FLOW - SKINCARE STEPS
+Context: Recommended steps to reach user's skin goals
+================================================================================
+
+English: How to reach your goals?
+Spanish: ¿Cómo alcanzar tus objetivos?
+
+Step 1:
+English: Use a gentle cleanser twice a day - once in the morning and once at night.
+Spanish: Usa un limpiador suave dos veces al día: una vez en la mañana y una vez en la noche.
+
+Step 2:
+English: Apply a hydrating toner or essence after cleansing.
+Spanish: Aplica un tónico o esencia hidratante después de la limpieza.
+
+Step 3:
+English: Limit sugar, greasy foods, and dairy.
+Spanish: Limita el consumo de azúcar, alimentos grasos y lácteos.
+
+Step 4:
+English: Avoid touching your face, using harsh scrubs, or picking at your skin.
+Spanish: Evita tocarte la cara, usar exfoliantes fuertes o rascarte la piel.
+
+Step 5:
+English: Wear sunscreen when out in the sun.
+Spanish: Usa protector solar cuando estés al sol.
+
+
+================================================================================
+12. CUSTOM PLAN GENERATION - COMPLETION
+Context: Screens shown while generating personalized plan
+================================================================================
+
+English: All done!
+Spanish: ¡Todo listo!
+
+English: Time to generate your own custom plan!
+Spanish: ¡Hora de generar tu plan personalizado!
+
+--- Loading States ---
+
+English: We're setting everything up for you
+Spanish: Estamos configurando todo para ti
+
+English: Processing your skin concerns...
+Spanish: Procesando tus preocupaciones de piel...
+
+English: Choosing the right ingredients...
+Spanish: Eligiendo los ingredientes correctos...
+
+English: Building your skincare routine...
+Spanish: Creando tu rutina de cuidado de la piel...
+
+English: Adding the finishing touches...
+Spanish: Agregando los toques finales...
+
+
+================================================================================
+13. CUSTOM PLAN GENERATION - SUCCESS
+Context: Plan generation complete, showing personalized results
+================================================================================
+
+English: Congratulations!
+Spanish: ¡Felicitaciones!
+
+English: Your personalized skin plan is ready
+Spanish: Tu plan de piel personalizado está listo
+
+English: Key Ingredients Targeted for You
+Spanish: Ingredientes clave seleccionados para ti
+
+English: Ingredient
+Spanish: Ingrediente
+
+English: UpSkin analyzes your skincare products and optimizes your routine.
+Spanish: UpSkin analiza tus productos para el cuidado de la piel y optimiza tu rutina.
+
+English: How to reach your goals?
+Spanish: ¿Cómo alcanzar tus objetivos?
+
+English: Plan based on the following sources, among other peer-reviewed dermatological studies:
+Spanish: Plan basado en las siguientes fuentes, entre otros estudios dermatológicos revisados por pares:
+
+--- Scientific Sources ---
+
+English: Skin barrier function
+Spanish: Función de barrera cutánea
+
+English: Ingredient analysis - Journal of the American Academy of Dermatology
+Spanish: Análisis de ingredientes: Journal of the American Academy of Dermatology
+
+English: International Society for Investigative Dermatology
+Spanish: International Society for Investigative Dermatology
+
+English: Let's get started
+Spanish: Comencemos
+
+
+================================================================================
+14. HOME SCREEN - SCAN OPTIONS
+Context: Main scanning features on home page
+================================================================================
+
+English: You haven't scanned anything
+Spanish: No has escaneado nada
+
+English: Start tracking your skin by taking a quick picture.
+Spanish: Comienza a monitorear tu piel tomando una foto rápida.
+
+English: Recently scanned
+Spanish: Escaneados recientemente
+
+--- Scan Face ---
+
+English: Scan Face
+Spanish: Escanear rostro
+
+English: Quick scan to discover your face
+Spanish: Escaneo rápido para descubrir tu rostro
+
+--- Scan Product ---
+
+English: Scan Product
+Spanish: Escanear producto
+
+English: Instant product ingredient check
+Spanish: Verificación instantánea de ingredientes del producto
+
+--- Scan Food ---
+
+English: Scan Food
+Spanish: Escanear comida
+
+English: Find skin-friendly foods fast
+Spanish: Encuentra alimentos amigables para tu piel
+
+
+================================================================================
+15. DAILY ROUTINES
+Context: Daily checklist and habit tracking features
+================================================================================
+
+English: Daily
+Spanish: Diario
+
+English: Streak
+Spanish: Racha
+
+English: In Progress
+Spanish: En progreso
+
+English: Next day starts in...
+Spanish: El próximo día comienza en...
+
+English: Daily routines
+Spanish: Rutinas diarias
+
+English: Add new habits
+Spanish: Agregar nuevos hábitos
+
+--- Checklist Management ---
+
+English: Add Checklist
+Spanish: Agregar lista de verificación
+
+English: Update Checklist
+Spanish: Actualizar lista de verificación
+
+English: Add or modify your checklist.
+Spanish: Agrega o modifica tu lista de verificación.
+
+English: Customize your preferred checklist to be included in your daily.
+Spanish: Personaliza tu lista de verificación preferida para incluirla en tu rutina diaria.
+
+English: Enter checklist title
+Spanish: Ingresa el título de la lista de verificación
+
+
+================================================================================
+16. AUTHENTICATION
+Context: Sign-in and authentication screens
+================================================================================
+
+English: Sign In
+Spanish: Iniciar Sesión
+
+English: Sign Up
+Spanish: Registrarse
+
+English: Continue with Apple
+Spanish: Continuar con Apple
+
+English: Continue with Google
+Spanish: Continuar con Google
+
+English: Verifying user
+Spanish: Verificando usuario
+
+--- First Face Scan ---
+
+English: Ready for your first face scan?
+Spanish: ¿Comenzamos con tu primer escaneo facial?
+
+English: Take a quick selfie to begin your skin journey.
+Spanish: Toma una selfie rápida para comenzar tu viaje de cuidado de la piel.
+
+
+================================================================================
+17. PHOTO TAKING INTERFACE
+Context: Camera interface for scanning face, products, food
+================================================================================
+
+English: Camera
+Spanish: Cámara
+
+English: Gallery
+Spanish: Galería
+
+English: Analyzing your skin condition...
+Spanish: Analizando la condición de tu piel...
+
+--- Camera Captions ---
+
+For Face Scan:
+English: Align your face with the mask
+Spanish: Alinea tu rostro con la máscara
+
+English: Slightly to your right
+Spanish: Ligeramente a tu derecha
+
+English: Slightly to your left
+Spanish: Ligeramente a tu izquierda
+
+For Product Scan:
+English: Place the product in the frame
+Spanish: Coloca el producto en el marco
+
+For Food Scan:
+English: Place the food in the frame
+Spanish: Coloca la comida en el marco
+
+
+================================================================================
+18. SCANNING PROGRESS MESSAGES
+Context: Loading messages shown while AI analyzes scans
+================================================================================
+
+English: Searching...
+Spanish: Buscando...
+
+English: Analyzing your scan...
+Spanish: Analizando tu escaneo...
+
+English: Processing results...
+Spanish: Procesando resultados...
+
+--- Product Scan Progress ---
+
+English: Browsing our database...
+Spanish: Navegando nuestra base de datos...
+
+English: Narrowing down search...
+Spanish: Reduciendo la búsqueda...
+
+English: Identifying the product...
+Spanish: Identificando el producto...
+
+English: Finalizing results...
+Spanish: Finalizando resultados...
+
+--- Food Scan Progress ---
+
+English: Analyzing food...
+Spanish: Analizando comida...
+
+English: Separating ingredients...
+Spanish: Separando ingredientes...
+
+English: Searching nutrition database...
+Spanish: Buscando en la base de datos nutricional...
+
+English: Finalizing results...
+Spanish: Finalizando resultados...
+
+--- Skin Scan Progress ---
+
+English: Deep skin profiling...
+Spanish: Perfilando profundamente la piel...
+
+English: Analyzing for skin type...
+Spanish: Analizando el tipo de piel...
+
+English: Detecting skin concerns...
+Spanish: Detectando preocupaciones sobre la piel...
+
+English: Finalizing results...
+Spanish: Finalizando resultados...
+
+
+================================================================================
+19. SCAN RESULTS - DETAIL PAGES
+Context: Displaying detailed analysis results for scans
+================================================================================
+
+--- General Section Headers ---
+
+English: Skin Type
+Spanish: Tipo de piel
+
+English: Skin information
+Spanish: Información de la piel
+
+English: Key Takeaway
+Spanish: Conclusión clave
+
+English: Food Information
+Spanish: Información de alimento
+
+English: Product Information
+Spanish: Información de producto
+
+--- Skin Conditions ---
+
+English: Acne
+Spanish: Acné
+
+English: Pores
+Spanish: Poros
+
+English: Hydration
+Spanish: Hidratación
+
+English: Redness
+Spanish: Enrojecimiento
+
+English: Wrinkles
+Spanish: Arrugas
+
+English: Eye Bag
+Spanish: Bolsas en los ojos
+
+--- Food Impact Metrics ---
+
+English: Bloat Risk
+Spanish: Riesgo de hinchazón
+
+English: Puffiness Risk
+Spanish: Riesgo de inflamación
+
+English: Sensitivity Risk
+Spanish: Riesgo de sensibilidad
+
+English: Acne Risk
+Spanish: Riesgo de acné
+
+English: Dryness Risk
+Spanish: Riesgo de resequedad
+
+English: Oiliness Impact
+Spanish: Impacto de grasa
+
+--- Product Ingredients ---
+
+English: Contains Dairy
+Spanish: Contiene lácteos
+
+English: Dairy Free
+Spanish: Sin lácteos
+
+English: Flagged Ingredients
+Spanish: Ingredientes marcados
+
+English: Key Ingredients
+Spanish: Ingredientes clave
+
+
+================================================================================
+20. SCAN HISTORY
+Context: History page showing past scans with filters
+================================================================================
+
+--- Tabs ---
+
+English: Recents
+Spanish: Recientes
+
+English: Favorites
+Spanish: Favoritos
+
+--- Filter Options ---
+
+English: Display history for
+Spanish: Mostrar historial de
+
+English: All
+Spanish: Todo
+
+English: Skin
+Spanish: Piel
+
+English: Product
+Spanish: Producto
+
+English: Food
+Spanish: Alimento
+
+--- Empty States ---
+
+No Favorites:
+English: No favorites found
+Spanish: No se encontraron favoritos
+
+English: You haven't marked any items as favorites yet.
+Spanish: Aún no has marcado ningún elemento como favorito.
+
+No Food Scans:
+English: You haven't scanned any food item
+Spanish: No has escaneado ningún alimento
+
+English: Start tracking your diet by scanning your meals.
+Spanish: Comienza a monitorear tu dieta escaneando tus comidas.
+
+No Product Scans:
+English: You haven't scanned any product
+Spanish: No has escaneado ningún producto
+
+English: Start tracking your skincare routine by scanning products.
+Spanish: Comienza a monitorear tu rutina de cuidado de la piel escaneando productos.
+
+No Skin Scans:
+English: You haven't scanned your skin
+Spanish: No has escaneado tu piel
+
+English: Start tracking your skin by taking a quick picture.
+Spanish: Comienza a monitorear tu piel tomando una foto rápida.
+
+No Scans at All:
+English: You haven't scanned anything
+Spanish: No has escaneado nada
+
+English: Start tracking your skin by taking a quick picture.
+Spanish: Comienza a monitorear tu piel tomando una foto rápida.
+
+
+================================================================================
+21. INVITE CODE / REFERRAL SYSTEM
+Context: Sharing invite codes and redeeming free trials
+================================================================================
+
+English: Redeem
+Spanish: Canjear
+
+English: Share your invite code
+Spanish: Comparte tu código de invitación
+
+English: Invite 3 friends to unlock results
+Spanish: Invita a 3 amigos para desbloquear resultados
+
+English: Share
+Spanish: Compartir
+
+English: Checking referrals...
+Spanish: Verificando referidos...
+
+--- Share Message Template ---
+
+English: UpSkin App is my new skincare secret. Use my code {code} to try it out.
+Spanish: UpSkin App es mi nuevo secreto de cuidado de la piel. Usa mi código {code} para probarlo.
+
+--- Toast Notifications ---
+
+English: Copied!
+Spanish: ¡Copiado!
+
+English: Invite code copied to clipboard.
+Spanish: Código de invitación copiado al portapapeles.
+
+English: You are not eligible for 30 days free trial.
+Spanish: No eres elegible para la prueba gratuita de 30 días.
+
+English: Referral
+Spanish: Referido
+
+English: Subscription
+Spanish: Suscripción
+
+English: Payment Successful
+Spanish: Pago exitoso
+
+
+================================================================================
+22. APP WALL / PAYWALL
+Context: Premium feature unlock screen
+================================================================================
+
+English: Reveal your results
+Spanish: Revelar tus resultados
+
+English: Invite 3 friends to view your results and unlock 30-day free trial
+Spanish: Invita a 3 amigos para ver tus resultados y desbloquear prueba gratis de 30 días
+
+English: Overall score
+Spanish: Puntuación general
+
+English: Skin Type
+Spanish: Tipo de piel
+
+English: Skin information
+Spanish: Información de la piel
+
+--- Skin Info Metrics ---
+
+English: Acne
+Spanish: Acné
+
+English: Pores
+Spanish: Poros
+
+English: Hydration
+Spanish: Hidratación
+
+--- Action Buttons ---
+
+English: Get It Now
+Spanish: Obtenerlo ahora
+
+English: Invite 3 Friends
+Spanish: Invitar a 3 amigos
+
+
+================================================================================
+23. SCORE & RISK LABELS
+Context: Quality/compatibility ratings shown in scan results
+================================================================================
+
+--- Quality Scores ---
+
+English: Bad
+Spanish: Malo
+
+English: Poor
+Spanish: Deficiente
+
+English: Good
+Spanish: Bueno
+
+English: Excellent
+Spanish: Excelente
+
+English: Invalid
+Spanish: Inválido
+
+--- Compatibility Scores ---
+
+English: Incompatible
+Spanish: Incompatible
+
+English: Minimal
+Spanish: Mínimo
+
+English: Perfect
+Spanish: Perfecto
+
+--- Risk Levels ---
+
+English: No Risk
+Spanish: Sin riesgo
+
+English: Low Risk
+Spanish: Riesgo bajo
+
+English: Moderate Risk
+Spanish: Riesgo moderado
+
+English: High Risk
+Spanish: Riesgo alto
+
+English: Unknown
+Spanish: Desconocido
+
+
+================================================================================
+24. ERROR MESSAGES & ALERTS
+Context: System errors, failures, and user notifications
+================================================================================
+
+--- General Errors ---
+
+English: Error
+Spanish: Error
+
+English: Something went wrong. Please try again.
+Spanish: Algo salió mal. Por favor, intenta de nuevo.
+
+English: Unexpected error! Please try again later.
+Spanish: ¡Error inesperado! Por favor, intenta más tarde.
+
+--- Network Errors ---
+
+English: Network connection error. Please check your internet connection.
+Spanish: Error de conexión de red. Por favor, verifica tu conexión a internet.
+
+--- Scan Errors ---
+
+English: Failed to process scan. Please try again.
+Spanish: Error al procesar el escaneo. Por favor, intenta de nuevo.
+
+English: Unable to process the image. Please try again!
+Spanish: No se puede procesar la imagen. ¡Por favor, intenta de nuevo!
+
+English: Unable to process this image
+Spanish: No se puede procesar esta imagen
+
+English: Please try again
+Spanish: Por favor, intenta de nuevo
+
+--- Photo/Camera Errors ---
+
+English: Camera access error. Please check permissions.
+Spanish: Error de acceso a la cámara. Por favor, verifica los permisos.
+
+English: Failed to copy images. Please try again.
+Spanish: Error al copiar imágenes. Por favor, intenta de nuevo.
+
+English: Failed to capture photo!
+Spanish: ¡Error al capturar la foto!
+
+English: Failed to select photo!
+Spanish: ¡Error al seleccionar la foto!
+
+
+================================================================================
+25. PERMISSION DIALOGS
+Context: System permission requests for camera and photo library
+================================================================================
+
+--- Camera Permission ---
+
+English: Camera Permission Required
+Spanish: Permiso de cámara requerido
+
+English: Allow UpSkin to access your camera to take photos and scan face, products, and food.
+Spanish: Permite a UpSkin acceder a tu cámara para tomar fotos y escanear rostros, productos y alimentos.
+
+--- Photo Library Permission ---
+
+English: Photos Permission Required
+Spanish: Permiso de fotos requerido
+
+English: Allow UpSkin to access your photos for the purpose of scanning face, products, and food.
+Spanish: Permite a UpSkin acceder a tus fotos para escanear rostros, productos y alimentos.
+
+
+================================================================================
+26. SHARING & EXPORT
+Context: Sharing scan results to other apps/social media
+================================================================================
+
+English: Sharing not available on this device
+Spanish: Opción de compartir no disponible en este dispositivo
+
+
+================================================================================
+27. MODAL DIALOGS
+Context: Confirmation dialogs and popups
+================================================================================
+
+English: Please Confirm
+Spanish: Por favor, confirma
+
+English: Cancel
+Spanish: Cancelar
+
+
+================================================================================
+28. VISUAL/MARKETING CONTENT (Screenshots & Graphics)
+Context: Text that appears in app screenshots, charts, and promotional materials
+Note: These may need to be added to the codebase or updated in design assets
+================================================================================
+
+--- Skin Progress Tracking ---
+
+English: Your skin clarity
+Spanish: Imperfecciones de tu piel
+
+--- Skin Clarity Levels ---
+
+English: Severe
+Spanish: Severas
+
+English: Moderate
+Spanish: Moderadas
+
+English: Mild
+Spanish: Leves
+
+English: Clear skin
+Spanish: Piel sin imperfecciones
+
+--- Time Period ---
+
+English: Week
+Spanish: Semana
+
+--- Routine Types ---
+
+English: Standard routine
+Spanish: Rutina estándar
+
+English: UpSkin routine
+Spanish: Rutina UpSkin
+
+--- Statistics & Social Proof ---
+
+English: 87% of UpSkin users see visible skin improvements within 4 weeks
+Spanish: 87% de los usuarios de UpSkin ven mejoras visibles en la piel en 4 semanas
+
+--- Personalization Progress ---
+
+English: Personalizing recommendation for
+Spanish: Personalizando recomendación para
+
+--- Personalization Categories ---
+
+English: Skin Concern
+Spanish: Preocupación sobre la piel
+
+English: Ingredients
+Spanish: Ingredientes
+
+English: Daily routine
+Spanish: Rutina diaria
+
+English: Targeted enhancements
+Spanish: Mejoras específicas
+
+--- Scan Types ---
+
+English: Daily selfie
+Spanish: Selfie diaria
+
+
+================================================================================
+29. APP STORE DESCRIPTION
+Context: Text that appears in App Store description section
+================================================================================
+
+HOW TO USE UPSKIN:
+1) Snap a photo of your skin or skincare product
+2) Get instant analysis and personalized insights
+3) Track your daily routine
+
+If you want glowing skin, UpSkin will help you get there faster than anyone else.
+
+Science is our influencer. Our in-house team of biologists, physicians, and engineers uses the latest scientific research in dermatology to assess your skin, skincare products, and even food.
+
+Just answer a few quick questions about your skin to receive essential care steps and recommended active ingredients—personalized to your skin and curated by our experts. Whether you're starting a skincare routine or refining your current one, UpSkin gives you a smarter starting point.
+
+With UpSkin, you'll always know whether a product is a perfect match, a potential match, or not a match for you. Based on your skin type and skincare goals, we assess how well a product suits your needs—so you can invest in what works, not just what's trending.
+
+---
+
+CÓMO USAR UPSKIN:
+1) Toma una foto de tu piel o producto de skincare
+2) Obtén un análisis instantáneo y recomendaciones personalizadas
+3) Lleva el registro de tu rutina diaria
+
+Si quieres una piel radiante, UpSkin te ayudará a lograrlo más rápido que nadie.
+
+La ciencia es nuestra influencer. Nuestro equipo interno de biólogos, médicos e ingenieros utiliza las últimas investigaciones científicas en dermatología para evaluar tu piel, productos de skincare e incluso alimentos.
+
+Solo responde unas preguntas rápidas sobre tu piel para recibir pasos esenciales de cuidado e ingredientes activos recomendados, personalizados para tu piel y seleccionados por nuestros expertos. Ya sea que estés empezando una rutina de skincare o perfeccionando la que ya tienes, UpSkin te da un punto de partida más inteligente.
+
+Con UpSkin, siempre sabrás si un producto es compatible al 100%, potencialmente compatible o no compatible contigo. Según tu tipo de piel y objetivos de cuidado, evaluamos qué tan bien se adapta un producto a tus necesidades para que inviertas en lo que funciona, no solo en lo que está de moda.
+
+
+================================================================================
+30. APP SCREENSHOT TEXTS
+Context: Text that appears in App Store screenshot section
+================================================================================
+
+English: Check if your skin products are really safe
+Spanish: Verifica si tus productos son realmente seguros
+
+English: The Ordinary Sunscreen
+Spanish: Protector solar The Ordinary
+
+English: Take a selfie to analyze your face
+Spanish: Tómate una selfie para analizar tu rostro
+
+English: Scan food
+Spanish: Escanea alimentos
+
+English: Get score
+Spanish: Ver puntuación
+
+English: Bagel with Cheese
+Spanish: Bagel con queso
+
+English: Customize routine
+Spanish: Personaliza tu rutina
+
+English: Reach your goal
+Spanish: Alcanza tu objetivo
+
+
+================================================================================
+END OF TRANSLATION REVIEW DOCUMENT
+================================================================================

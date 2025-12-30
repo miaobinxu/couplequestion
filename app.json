@@ -1,0 +1,107 @@
+{
+  "expo": {
+    "name": "UpSkin",
+    "slug": "upskin",
+    "version": "2.10.7",
+    "scheme": "upskin",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": false,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.insky.app",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "entitlements": {
+        "aps-environment": "development"
+      },
+      "usesAppleSignIn": true,
+      "icon": {
+        "light": "./src/assets/images/icons/Light.png",
+        "dark": "./src/assets/images/icons/Dark.png",
+        "tinted": "./src/assets/images/icons/Tinted.png"
+      },
+      "buildNumber": "30",
+      "appleTeamId": "L2DPAUZPJ6"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/icons/adaptive-icon.png",
+        "backgroundColor": "#19661F"
+      },
+      "package": "com.insky.app",
+      "softwareKeyboardLayoutMode": "pan",
+      "icon": "./src/assets/images/icons/Light.png",
+      "permissions": [
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA"
+      ],
+      "versionCode": 49
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./src/assets/images/icons/splash-placeholder.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#19661F"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26,
+            "targetSdkVersion": 35,
+            "compileSdkVersion": 35
+          },
+          "ios": {
+            "deploymentTarget": "16.0"
+          }
+        }
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.964828168521-d9brgd45io4mphs6j5v1jrombbossl4i"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow UpSkin to access your photos for the purpose of scanning face, products, and food."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow UpSkin to access your camera to take photos and scan face, products, and food.",
+          "recordAudioAndroid": false
+        }
+      ],
+      "expo-apple-authentication"
+    ],
+    "runtimeVersion": "1.0.0",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8150c19f-03f8-4b4d-9773-8da72bccc455",
+      "checkAutomatically": "NEVER",
+      "requestHeaders": {
+        "expo-channel-name": "production"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8150c19f-03f8-4b4d-9773-8da72bccc455"
+      },
+      "router": {
+        "origin": false
+      }
+    },
+    "owner": "upskin_llc"
+  }
+}

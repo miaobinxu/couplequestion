@@ -1,0 +1,4 @@
+export enum LocalStoreKeys {
+    USER_DATA = 'USER_DATA',
+    ONBOARDING_COMPLETED = 'ONBOARDING_COMPLETED',
+} 

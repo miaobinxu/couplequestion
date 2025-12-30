@@ -1,0 +1,574 @@
+{
+  "common": {
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "done": "Hecho",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "retry": "Reintentar",
+    "yes": "SÍ",
+    "no": "NO"
+  },
+  "foyer": {
+    "twoMillion": "Más de 2 millones",
+    "glowingUsers": "de usuarios radiantes",
+    "createBestVersion": "Crea la mejor versión de\ntu piel",
+    "getStarted": "Comenzar",
+    "testimonials": {
+      "simpleExplanation": "\"Explicación simple de los ingredientes\"",
+      "adultAcne": "\"Finalmente me deshice del acné adulto que duró 3 años\"",
+      "easierChoice": "\"Hace que elegir productos para la piel sea mucho más fácil\""
+    }
+  },
+  "tabs": {
+    "home": "Inicio",
+    "daily": "Diario",
+    "settings": "Configuración"
+  },
+  "settings": {
+    "title": "Configuración",
+    "customizations": "Personalizaciones",
+    "general": "General",
+    "myProfile": "Mi Perfil",
+    "skinProfile": "Perfil de piel",
+    "customizeDailyRoutine": "Personalizar rutina diaria",
+    "scanHistory": "Historial de escaneos",
+    "shareApp": "Compartir nuestra app",
+    "termsAndConditions": "Términos y Condiciones",
+    "privacyPolicy": "Política de Privacidad",
+    "supportEmail": "Email de soporte",
+    "logout": "Cerrar sesión",
+    "deleteAccount": "Eliminar cuenta",
+    "accountDeleted": "Cuenta eliminada",
+    "accountDeletedMessage": "Tu cuenta ha sido eliminada exitosamente.",
+    "modals": {
+      "confirmLogout": {
+        "title": "Confirmar Cierre de Sesión",
+        "message": "¿Estás seguro de que quieres cerrar sesión en tu cuenta?",
+        "confirmButton": "Cerrar Sesión"
+      },
+      "confirmDelete": {
+        "title": "Por Favor Confirma",
+        "message": "Haz clic en el botón de abajo para confirmar que quieres eliminar esta cuenta.",
+        "confirmButton": "Eliminar Cuenta"
+      }
+    },
+    "loading": {
+      "restoringPurchases": "Restaurando compras...",
+      "deletingAccount": "Eliminando cuenta..."
+    },
+    "toasts": {
+      "noPurchasesFound": {
+        "title": "No se Encontraron Compras",
+        "message": "No pudimos encontrar suscripciones activas para restaurar."
+      },
+      "purchasesRestored": {
+        "title": "Compras Restauradas",
+        "message": "Tus suscripciones activas han sido restauradas."
+      },
+      "logoutFailed": {
+        "title": "Error al Cerrar Sesión"
+      }
+    },
+    "email": {
+      "subject": "Solicitud de Soporte",
+      "body": "Hola Soporte de Upskin,\n\nNecesito ayuda con..."
+    },
+    "profile": {
+      "title": "Perfil",
+      "birthInfo": "Información de Nacimiento",
+      "birthDate": "Fecha de Nacimiento",
+      "birthPlace": "Lugar de Nacimiento",
+      "birthTime": "Hora de Nacimiento",
+      "chart": "Carta"
+    }
+  },
+  "skinProfile": {
+    "title": "Perfil de piel",
+    "gender": "Género",
+    "ageGroup": "Grupo de edad",
+    "skinType": "Tipo de piel",
+    "skinConcern": "Preocupación de piel",
+    "skinGoal": "Objetivo de piel",
+    "currentSkinReport": "Mi reporte actual de piel",
+    "startQuiz": "Comenzar cuestionario"
+  },
+  "customPlanGeneration": {
+    "allDone": {
+      "subtitle": "¡Todo listo!",
+      "title": "¡Hora de generar tu\nplan personalizado!"
+    },
+    "settingUp": {
+      "title": "Estamos configurando\n",
+      "titleHighlight": "todo para ti",
+      "processingConcerns": "Procesando tus preocupaciones de piel...",
+      "choosingIngredients": "Eligiendo los ingredientes correctos...",
+      "buildingRoutine": "Creando tu rutina de cuidado de la piel...",
+      "finishingTouches": "Agregando los toques finales...",
+      "calculatingChart": "Calculando tu carta natal...",
+      "mappingPlacements": "Mapeando tus ubicaciones planetarias...",
+      "interpretingPlacements": "Interpretando tu ascendente, sol y luna...",
+      "personalizingTips": "Personalizando tus consejos de compatibilidad...",
+      "personalizingGuidance": "Personalizando tu guía diaria..."
+    },
+    "generateSuccess": {
+      "title": "¡Felicitaciones!",
+      "subtitle": "Tu plan de piel personalizado está listo",
+      "keyIngredientsTitle": "Ingredientes clave seleccionados para ti",
+      "ingredient": "Ingrediente",
+      "analyzesRoutine": "UpSkin analiza tus productos para el cuidado de la piel y\noptimiza tu rutina.",
+      "howToReachGoals": "¿Cómo alcanzar tus objetivos?",
+      "planBasedOn": "Plan basado en las siguientes fuentes, entre\notros estudios dermatológicos revisados por pares:",
+      "sources": {
+        "skinBarrier": "Función de barrera cutánea",
+        "ingredientAnalysis": "Análisis de ingredientes: Journal of the American\nAcademy of Dermatology",
+        "investigativeDermatology": "International Society for Investigative\nDermatology"
+      },
+      "getStarted": "Comencemos"
+    }
+  },
+  "home": {
+    "notScannedTitle": "No has escaneado nada",
+    "notScannedDescription": "Comienza a monitorear tu piel tomando una foto rápida.",
+    "scanFace": {
+      "title": "Escanear rostro",
+      "subtitle": "Escaneo rápido para descubrir tu rostro"
+    },
+    "scanProduct": {
+      "title": "Escanear producto",
+      "subtitle": "Verificación instantánea de ingredientes del producto"
+    },
+    "scanFood": {
+      "title": "Escanear comida",
+      "subtitle": "Encuentra alimentos amigables para tu piel"
+    },
+    "recentlyScanned": "Escaneados recientemente",
+    "cards": {
+      "askMeAnything": {
+        "title": "Pregúntame Cualquier Cosa",
+        "subtitle": "Obtén respuestas a todas tus preguntas de astrología"
+      },
+      "dailyHoroscope": {
+        "title": "Horóscopo Diario",
+        "subtitle": "Tu pronóstico cósmico diario personalizado"
+      },
+      "romanticAdvice": {
+        "title": "Consejos Románticos",
+        "subtitle": "Explora tu compatibilidad amorosa astrológica"
+      },
+      "seeMore": "Ver Más"
+    },
+    "astrology": {
+      "today": "Hoy",
+      "compatibility": "Compatibilidad",
+      "birthChart": "Carta Natal",
+      "todaysGuidance": "Guía de Hoy",
+      "dailyHoroscope": "Horóscopo Diario",
+      "luckyNumbers": "Números de la Suerte",
+      "bestMatches": "Mejores Compatibilidades",
+      "yourPlacements": "Tus Ubicaciones",
+      "sunSign": "Signo Solar",
+      "moonSign": "Signo Lunar",
+      "risingSign": "Signo Ascendente"
+    }
+  },
+  "daily": {
+    "title": "Diario",
+    "streak": "Racha",
+    "inProgress": "En progreso",
+    "nextDayStartsIn": "El próximo día comienza en...",
+    "routines": {
+      "title": "Rutinas diarias",
+      "addNewHabits": "Agregar nuevos hábitos"
+    }
+  },
+  "onboarding": {
+    "welcome": "Bienvenido a UpSkin",
+    "getStarted": "Comenzar",
+    "continue": "Continuar",
+    "name": {
+      "title": "Hola, soy inSky, ¿cuál es tu nombre?",
+      "placeholder": "Ingresa tu nombre"
+    },
+    "birthDate": {
+      "title": "Para alinearte con las estrellas, ¿podrías compartir tu fecha de nacimiento?"
+    },
+    "birthPlace": {
+      "title": "¿Podrías decirme dónde naciste?",
+      "placeholder": "Nueva York, NY, Estados Unidos"
+    },
+    "birthTime": {
+      "title": "¿A qué hora naciste?",
+      "skipForNow": "Omitir por ahora"
+    },
+    "gender": {
+      "title": "¿Cuál es tu género?",
+      "subtitle": "Crearemos un plan personalizado solo para ti."
+    },
+    "ageGroup": {
+      "title": "¿Cuál es tu grupo de edad?",
+      "subtitle": "Crearemos el plan más beneficioso para\nti."
+    },
+    "skinType": {
+      "title": "¿Cuál es tu tipo de piel?",
+      "subtitle": "Generaremos un plan que tu piel amará."
+    },
+    "skinConcern": {
+      "title": "¿Qué te preocupa sobre\ntu piel?",
+      "subtitle": "Puedes elegir más de una respuesta."
+    },
+    "skinGoal": {
+      "title": "¿Cuál es tu objetivo para tu piel?",
+      "subtitle": "Puedes elegir más de una respuesta."
+    },
+    "referralSource": {
+      "title": "¿Dónde escuchaste sobre UpSkin?",
+      "subtitle": ""
+    },
+    "longTermResults": {
+      "title": "UpSkin crea resultados a largo plazo"
+    },
+    "rating": {
+      "title": "Califícanos",
+      "subtitle": "Esta aplicación fue diseñada para\npersonas como tú.",
+      "usersCount": "2M de usuarios de UpSkin",
+      "reviews": {
+        "luke": {
+          "name": "Luke Garfield",
+          "text": "¡Finalmente mi piel está libre de imperfecciones después de 3 años de acné persistente! No esperaba que esta aplicación funcionara, pero afortunadamente le di una oportunidad y funcionó para mí."
+        },
+        "amelia": {
+          "name": "Amelia Bar",
+          "text": "No me di cuenta de cuánta basura estaba poniendo en mi cara hasta ahora. En serio, ¡escanea todo con UpSkin primero!"
+        }
+      }
+    },
+    "referralCode": {
+      "title": "¿Tienes un\ncódigo de referido?",
+      "subtitle": "Puedes omitir este paso.",
+      "placeholder": "Ingresa código de referido",
+      "toast": {
+        "title": "Código de referido",
+        "success": "Verificado exitosamente",
+        "error": "Código de referido inválido"
+      }
+    },
+    "genderOptions": {
+      "male": "Masculino",
+      "female": "Femenino",
+      "other": "Otro"
+    },
+    "ageGroups": {
+      "under21": "Menor de 21",
+      "21to30": "21 a 30",
+      "31to40": "31 a 40",
+      "41to50": "41 a 50",
+      "51to60": "51 a 60",
+      "61orAbove": "61 o más"
+    },
+    "skinTypes": {
+      "normal": {
+        "label": "Normal",
+        "description": "Tiene poros apenas visibles, se ve hidratada"
+      },
+      "dry": {
+        "label": "Seca",
+        "description": "Se siente tirante, podría descamarse"
+      },
+      "oily": {
+        "label": "Grasa",
+        "description": "Tiene poros grandes y brillo general"
+      },
+      "combination": {
+        "label": "Mixta",
+        "description": "Tiene zona T grasa y mejillas secas o normales"
+      },
+      "notSure": {
+        "label": "No lo sé",
+        "description": "¡No te preocupes! Lo descubrirás con el escaneo facial de UpSkin"
+      }
+    },
+    "skinConcerns": {
+      "acne": "Acné",
+      "wrinkles": "Arrugas",
+      "largePores": "Poros grandes",
+      "pigmentation": "Pigmentación",
+      "drySkin": "Piel seca",
+      "redness": "Rojez"
+    },
+    "skinGoals": {
+      "reduceAcne": "Reducir acné o marcas del acné",
+      "minimizeWrinkles": "Minimizar arrugas, mejorar la firmeza de la piel",
+      "minimizePores": "Minimizar poros",
+      "ridPigmentation": "Eliminar la pigmentación",
+      "moreHydrated": "Tener una piel más hidratada",
+      "reduceRedness": "Reducir enrojecimiento e irritación"
+    },
+    "referralSources": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tiktok": "TikTok",
+      "youtube": "YouTube",
+      "google": "Google",
+      "tv": "TV",
+      "noneOfThese": "Ninguna de estas"
+    },
+    "reachGoalsSteps": {
+      "step1": "Usa un limpiador suave dos veces al día: una vez en la mañana y una vez en la noche.",
+      "step2": "Aplica un tónico o esencia hidratante después de la limpieza.",
+      "step3": "Limita el consumo de azúcar, alimentos grasos y lácteos.",
+      "step4": "Evita tocarte la cara, usar exfoliantes fuertes o rascarte la piel.",
+      "step5": "Usa protector solar cuando estés al sol."
+    }
+  },
+  "spiritualCleanse": {
+    "title": "Limpieza Espiritual",
+    "welcomeMessage": "Bienvenido a tu santuario espiritual. ¿Cómo te gustaría limpiar y realinear tu energía hoy?",
+    "placeholder": "Pregúntame cualquier cosa sobre espiritualidad...",
+    "errorMessage": "Tengo problemas para conectarme al reino espiritual en este momento. Por favor, inténtalo de nuevo en un momento.",
+    "avatarText": {
+      "ai": "inSky",
+      "user": "Yo"
+    },
+    "suggestedQuestions": {
+      "morningRoutine": "¿Qué es una rutina espiritual matutina?",
+      "protection": "¿Cuáles son algunos métodos de protección espiritual?",
+      "sanctuary": "¿Qué es un santuario espiritual?"
+    }
+  },
+  "signIn": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "continueWithApple": "Continuar con Apple",
+    "continueWithGoogle": "Continuar con Google",
+    "readyForFirstScan": {
+      "title": "¿Comenzamos con tu primer\nescaneo facial?",
+      "subtitle": "Toma una selfie rápida para comenzar tu\nviaje de cuidado de la piel."
+    },
+    "takePhoto": {
+      "captions": {
+        "alignFace": "Alinea tu rostro con\nla máscara",
+        "slightlyRight": "Ligeramente a tu derecha",
+        "slightlyLeft": "Ligeramente a tu izquierda",
+        "placeProduct": "Coloca el producto en\nel marco",
+        "placeFood": "Coloca la comida en el\nmarco"
+      },
+      "camera": "Cámara",
+      "gallery": "Galería",
+      "analyzingSkin": "Analizando la condición de tu piel..."
+    }
+  },
+  "scanning": {
+    "searching": "Buscando...",
+    "analyzing": "Analizando tu escaneo...",
+    "processingResults": "Procesando resultados...",
+    "product": {
+      "message1": "Navegando nuestra base de datos...",
+      "message2": "Reduciendo la búsqueda...",
+      "message3": "Identificando el producto...",
+      "message4": "Finalizando resultados..."
+    },
+    "food": {
+      "message1": "Analizando comida...",
+      "message2": "Separando ingredientes...",
+      "message3": "Buscando en base de datos nutricional...",
+      "message4": "Finalizando resultados..."
+    },
+    "skin": {
+      "message1": "Perfilando profundamente la piel...",
+      "message2": "Analizando el tipo de piel...",
+      "message3": "Detectando preocupaciones sobre la piel...",
+      "message4": "Finalizando resultados..."
+    }
+  },
+  "appWall": {
+    "title": "Tu plan está listo.",
+    "restore": "Restaurar",
+    "unlimitedFaceScans": "Escaneos faciales ilimitados",
+    "unlimitedProductScans": "Escaneos de productos ilimitados",
+    "accessDB": "Acceso a más de 10000 productos DB",
+    "unlimitedFoodScans": "Escaneos de alimentos ilimitados",
+    "customRoutines": "Rutinas diarias personalizadas",
+    "yearly": "Anual",
+    "monthly": "Mensual",
+    "yearlyPrice": "{{price}}/año",
+    "monthlyPrice": "{{price}}/mes",
+    "freeTrial": "3 DÍAS GRATIS",
+    "startTrial": "Comenzar mi prueba gratuita de 3 días",
+    "startYearly": "Comenzar mi suscripción anual",
+    "startMonthly": "Comenzar mi suscripción mensual",
+    "disclaimer": "Renovable automáticamente, cancela en cualquier momento"
+  },
+  "oneTimeOffer": {
+    "title": "Oferta única",
+    "subtitle": "No volverás a ver esto",
+    "unavailable": "Esta oferta especial no está disponible actualmente.",
+    "continueToPlans": "Continuar a los planes",
+    "heresA": "Aquí tienes un",
+    "discount": "50% de descuento",
+    "discountSuffix": "¡Descuento!",
+    "pricePerMonth": "Solo {{price}}/mes",
+    "lowestPrice": "El precio más bajo de todos",
+    "noCommitment": "Sin compromiso, cancela cuando quieras",
+    "claimOffer": "Reclamar mi oferta por tiempo limitado",
+    "billedAt": "facturado a {{price}} por año",
+    "billedAnnually": "facturado anualmente"
+  },
+  "appWallUnpaid": {
+    "revealResults": "Revelar tus resultados",
+    "inviteMessage": "Invita a 3 amigos para ver tus resultados y desbloquear prueba gratis de 30 días",
+    "overallScore": "Puntuación general",
+    "compatibility": "Compatibilidad",
+    "skinType": "Tipo de piel",
+    "skinInformation": "Información de la piel",
+    "skinInfo": {
+      "acne": "Acné",
+      "pores": "Poros",
+      "hydration": "Hidratación"
+    },
+    "getItNow": "Obtenerlo ahora",
+    "inviteFriends": "Invitar a 3 amigos"
+  },
+  "modal": {
+    "pleaseConfirm": "Por favor, confirma",
+    "cancel": "Cancelar"
+  },
+  "details": {
+    "skinConditions": {
+      "acne": "Acné",
+      "pores": "Poros",
+      "hydration": "Hidratación",
+      "redness": "Rojez",
+      "wrinkles": "Arrugas",
+      "eyeBag": "Bolsas"
+    },
+    "foodImpacts": {
+      "bloatRisk": "Riesgo de hinchazón",
+      "puffinessRisk": "Riesgo de inflamación",
+      "sensitivityRisk": "Riesgo de sensibilidad",
+      "acneRisk": "Riesgo de acné",
+      "drynessRisk": "Riesgo de resequedad",
+      "oilinessImpact": "Impacto de grasa"
+    },
+    "sections": {
+      "skinType": "Tipo de piel",
+      "skinInformation": "Información de la piel",
+      "keyTakeaway": "Conclusión clave",
+      "foodInformation": "Información de alimento",
+      "productInformation": "Información de producto",
+      "containsDairy": "Contiene lácteos",
+      "dairyFree": "Sin lácteos",
+      "flaggedIngredients": "Ingredientes marcados",
+      "keyIngredients": "Ingredientes clave"
+    },
+    "sharing": {
+      "notAvailable": "Opción de compartir no disponible en este dispositivo"
+    }
+  },
+  "scanHistory": {
+    "tabs": {
+      "recents": "Recientes",
+      "favorites": "Favoritos"
+    },
+    "filter": {
+      "label": "Mostrar historial de",
+      "all": "Todo",
+      "skin": "Piel",
+      "product": "Producto",
+      "food": "Alimento"
+    },
+    "empty": {
+      "noFavorites": {
+        "title": "No se encontraron favoritos",
+        "description": "Aún no has marcado ningún elemento como favorito."
+      },
+      "noFood": {
+        "title": "No has escaneado ningún alimento",
+        "description": "Comienza a monitorear tu dieta escaneando tus comidas."
+      },
+      "noProduct": {
+        "title": "No has escaneado ningún producto",
+        "description": "Comienza a monitorear tu rutina de cuidado de la piel escaneando productos."
+      },
+      "noSkin": {
+        "title": "No has escaneado tu piel",
+        "description": "Comienza a monitorear tu piel tomando una foto rápida."
+      },
+      "noScans": {
+        "title": "No has escaneado nada",
+        "description": "Comienza a monitorear tu piel tomando una foto rápida."
+      }
+    }
+  },
+  "dailyRoutine": {
+    "addChecklist": "Agregar lista de verificación",
+    "updateChecklist": "Actualizar lista de verificación",
+    "heading": "Agrega o modifica tu lista de verificación.",
+    "subheading": "Personaliza tu lista de verificación preferida para incluirla en tu rutina diaria.",
+    "placeholder": "Ingresa el título de la lista de verificación"
+  },
+  "auth": {
+    "continueWithApple": "Continuar con Apple",
+    "continueWithGoogle": "Continuar con Google",
+    "verifyingUser": "Verificando usuario"
+  },
+  "inviteCode": {
+    "redeem": "Canjear",
+    "shareTitle": "Comparte tu código de invitación",
+    "shareDescription": "Invita a 3 amigos para desbloquear resultados",
+    "share": "Compartir",
+    "shareMessage": "UpSkin App es mi nuevo secreto de cuidado de la piel. Usa mi código {code} para probarlo.",
+    "checkingReferrals": "Verificando referidos...",
+    "toast": {
+      "copied": "¡Copiado!",
+      "copiedMessage": "Código de invitación copiado al portapapeles.",
+      "notEligible": "No eres elegible para la prueba gratuita de 30 días.",
+      "referral": "Referido",
+      "subscription": "Suscripción",
+      "paymentSuccess": "Pago exitoso"
+    }
+  },
+  "alerts": {
+    "error": "Error",
+    "failedToCopyImages": "Error al copiar imágenes. Por favor, intenta de nuevo.",
+    "failedToCapturePhoto": "¡Error al capturar la foto!",
+    "failedToSelectPhoto": "¡Error al seleccionar la foto!",
+    "unexpectedError": "¡Error inesperado! Por favor, intenta más tarde."
+  },
+  "permissions": {
+    "cameraTitle": "Permiso de cámara requerido",
+    "cameraMessage": "Permite a UpSkin acceder a tu cámara para tomar fotos y escanear rostros, productos y alimentos.",
+    "photosTitle": "Permiso de fotos requerido",
+    "photosMessage": "Permite a UpSkin acceder a tus fotos para escanear rostros, productos y alimentos."
+  },
+  "errors": {
+    "networkError": "Error de conexión de red. Por favor, verifica tu conexión a internet.",
+    "scanError": "Error al procesar el escaneo. Por favor, intenta de nuevo.",
+    "cameraError": "Error de acceso a la cámara. Por favor, verifica los permisos.",
+    "generalError": "Algo salió mal. Por favor, intenta de nuevo.",
+    "imageProcessError": "No se puede procesar la imagen. ¡Por favor, intenta de nuevo!",
+    "unableToProcessImage": "No se puede procesar esta imagen",
+    "pleaseTryAgain": "Por favor, intenta de nuevo"
+  },
+  "scoreLabels": {
+    "bad": "Malo",
+    "poor": "Deficiente",
+    "good": "Bueno",
+    "excellent": "Excelente",
+    "invalid": "Inválido",
+    "incompatible": "Incompatible",
+    "minimal": "Mínimo",
+    "perfect": "Perfecto",
+    "noRisk": "Sin riesgo",
+    "lowRisk": "Riesgo bajo",
+    "moderateRisk": "Riesgo moderado",
+    "highRisk": "Riesgo alto",
+    "unknown": "Desconocido"
+  }
+}

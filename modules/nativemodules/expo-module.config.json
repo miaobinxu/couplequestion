@@ -1,0 +1,17 @@
+{
+  "platforms": [
+    "apple",
+    "android",
+    "web"
+  ],
+  "apple": {
+    "modules": [
+      "BillingModule"
+    ]
+  },
+  "android": {
+    "modules": [
+      "expo.modules.billing.BillingModule"
+    ]
+  }
+}

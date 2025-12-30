@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleDisplayName = "UpSkin";
+CFBundleName = "UpSkin";
+NSCameraUsageDescription = "Permite a UpSkin acceder a tu cámara para tomar fotos y escanear rostro, productos y alimentos.";
+NSPhotoLibraryUsageDescription = "Permite a UpSkin acceder a tus fotos para escanear rostro, productos y alimentos.";

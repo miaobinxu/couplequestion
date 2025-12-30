@@ -1,0 +1,61 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types",
+      "./images.d.ts"
+    ],
+    "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@app/*": [
+        "./app/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@screens/*": [
+        "./src/screens/*"
+      ],
+      "@global-store/*": [
+        "./src/global-store/*"
+      ],
+      "@blue-prints/*": [
+        "./src/blue-prints/*"
+      ],
+      "@local-store/*": [
+        "./src/local-store/*"
+      ],
+      "@utilities/*": [
+        "./src/utilities/*"
+      ],
+      "@reusable-components/*": [
+        "./src/reusable-components/*"
+      ]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
