@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import {
   StyleSheet,
   View,
@@ -6,6 +6,7 @@ import {
   Platform,
   TextInput,
   Keyboard,
+  Animated,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
@@ -41,6 +42,56 @@ const NinetyPercentContent: React.FC<NinetyPercentContentProps> = React.memo(
     const { setIsFreeTrialActive } = useUserStore();
 
     const [isRefferalLoading, setRefferalLoading] = useState(false);
+    const [keyboardHeight, setKeyboardHeight] = useState(0);
+    const buttonAnimation = useRef(new Animated.Value(0)).current;
+    const opacityAnimation = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+      const keyboardDidShowListener = Keyboard.addListener(
+        "keyboardDidShow",
+        (event) => {
+          const height = event.endCoordinates.height;
+          setKeyboardHeight(height);
+
+          Animated.parallel([
+            Animated.timing(buttonAnimation, {
+              toValue: height,
+              duration: event.duration || 250,
+              useNativeDriver: false,
+            }),
+            Animated.timing(opacityAnimation, {
+              toValue: 1,
+              duration: event.duration || 250,
+              useNativeDriver: false,
+            }),
+          ]).start();
+        }
+      );
+      const keyboardDidHideListener = Keyboard.addListener(
+        "keyboardDidHide",
+        (event) => {
+          Animated.parallel([
+            Animated.timing(buttonAnimation, {
+              toValue: 0,
+              duration: event.duration || 250,
+              useNativeDriver: false,
+            }),
+            Animated.timing(opacityAnimation, {
+              toValue: 0,
+              duration: event.duration || 250,
+              useNativeDriver: false,
+            }),
+          ]).start(() => {
+            setKeyboardHeight(0);
+          });
+        }
+      );
+
+      return () => {
+        keyboardDidHideListener?.remove();
+        keyboardDidShowListener?.remove();
+      };
+    }, []);
 
     useEffect(() => {
       setWrittenReferralCode(referralCode);
@@ -98,7 +149,7 @@ const NinetyPercentContent: React.FC<NinetyPercentContentProps> = React.memo(
     }, [progress, referralCode, writtenReferralCode]);
 
     return (
-      <>
+      <View style={{ flex: 1 }}>
         <View
           style={styles.contentPart}
           onStartShouldSetResponder={() => true}
@@ -115,23 +166,46 @@ const NinetyPercentContent: React.FC<NinetyPercentContentProps> = React.memo(
             autoCapitalize="none"
           />
         </View>
-        <SafeAreaView edges={["bottom"]}>
-          <View style={styles.buttonPart}>
-            <ButtonWithFeedback
-              text={t("common.continue")}
-              marginTop={hp(1.5)}
-              backgroundColor={"#6A4CFF"}
-              textColor={"#FFFFFF"}
-              viewStyle={{
-                alignSelf: "center",
-              }}
-              onPress={handleContinue}
-            />
-          </View>
-        </SafeAreaView>
+
+        <Animated.View
+          style={[
+            styles.keyboardButtonContainer,
+            {
+              bottom: buttonAnimation,
+              opacity: opacityAnimation,
+            },
+          ]}
+        >
+          <ButtonWithFeedback
+            text={t("common.continue")}
+            backgroundColor={"#6A4CFF"}
+            textColor={"#FFFFFF"}
+            viewStyle={{
+              alignSelf: "center",
+            }}
+            onPress={handleContinue}
+          />
+        </Animated.View>
+
+        {keyboardHeight === 0 && (
+          <SafeAreaView edges={["bottom"]}>
+            <View style={styles.buttonPart}>
+              <ButtonWithFeedback
+                text={t("common.continue")}
+                marginTop={hp(1.5)}
+                backgroundColor={"#6A4CFF"}
+                textColor={"#FFFFFF"}
+                viewStyle={{
+                  alignSelf: "center",
+                }}
+                onPress={handleContinue}
+              />
+            </View>
+          </SafeAreaView>
+        )}
 
         {isRefferalLoading && <LoadingOverlay />}
-      </>
+      </View>
     );
   }
 );
@@ -167,17 +241,24 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp(4),
     borderRadius: 12,
     alignSelf: "center",
-    marginTop: hp(15),
+    marginTop: hp(4),
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(16),
     color: "#FFFFFF",
   },
   buttonPart: {
-    // flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
     paddingBottom: hp(2),
+  },
+  keyboardButtonContainer: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    backgroundColor: "#000000",
+    paddingVertical: hp(2),
+    paddingHorizontal: wp(5.5),
   },
 });
 
