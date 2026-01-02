@@ -169,16 +169,15 @@ const TenPercentContent: React.FC<TenPercentContentProps> = React.memo(
     );
   }
 );
-
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
   title: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(28),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
     lineHeight: scaleFont(36),
@@ -188,28 +187,29 @@ const styles = StyleSheet.create({
     color: "#6A4CFF",
   },
   textInput: {
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#F5F5F5",
     borderRadius: 12,
     paddingHorizontal: wp(4),
     paddingVertical: hp(2),
     marginHorizontal: wp(5.5),
     marginTop: hp(4),
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
     borderWidth: 1,
-    borderColor: "#6A4CFF",
+    borderColor: "#DADADA",
   },
   buttonPart: {
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
+    borderTopColor: "#E5E5E5",
     paddingBottom: hp(2),
   },
   keyboardButtonContainer: {
     position: "absolute",
     left: 0,
     right: 0,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
     paddingVertical: hp(2),
     paddingHorizontal: wp(5.5),
   },

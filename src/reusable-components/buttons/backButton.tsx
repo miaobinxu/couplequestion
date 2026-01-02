@@ -19,7 +19,7 @@ const BackButton: React.FC<BackButtonProps> = React.memo(({ onPress }) => {
 const styles = StyleSheet.create({
   backArrowIcon: {
     marginLeft: wp(5),
-    tintColor: "#FFFFFF",
+    tintColor: "#000000",
   },
 });
 

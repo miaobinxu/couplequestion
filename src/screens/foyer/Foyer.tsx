@@ -119,7 +119,6 @@ const Foyer: React.FC = () => {
           >
             {texts[textIndex]}
           </Animated.Text>
-            
         </ScrollView>
       </View>
       <SafeAreaView edges={["bottom"]}>
@@ -145,11 +144,10 @@ const Foyer: React.FC = () => {
     </SafeAreaView>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
   contentContainer: {
     flex: 1,
@@ -176,19 +174,19 @@ const styles = StyleSheet.create({
   twoMillion: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(34),
-    color: "#FFFFFF",
+    color: "#111111",
     marginHorizontal: wp(2),
   },
   glowingUsers: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(24),
-    color: "#FFFFFF",
+    color: "#333333",
     lineHeight: Platform.OS === "android" ? wp(7) : undefined,
   },
   createBestVersion: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(24),
-    color: "#FFFFFF",
+    color: "#111111",
     marginTop: hp(4),
     textAlign: "center",
   },
@@ -198,7 +196,7 @@ const styles = StyleSheet.create({
   changingText: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(20),
-    color: "#FFFFFF",
+    color: "#555555",
     marginTop: hp(1),
     marginHorizontal: wp(2),
     textAlign: "center",
@@ -207,6 +205,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     borderTopWidth: 1,
+    borderTopColor: "#E5E5E5",
     zIndex: 1000,
     paddingBottom: hp(2),
   },

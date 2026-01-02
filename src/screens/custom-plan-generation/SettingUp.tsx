@@ -236,30 +236,29 @@ const SettingUp: React.FC = () => {
     </SafeAreaView>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "center",
   },
   percentage: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(48),
-    color: "#FFFFFF",
+    color: "#111111",
     textAlign: "center",
   },
   settingEverything: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(24),
-    color: "#FFFFFF",
+    color: "#333333",
     textAlign: "center",
     marginTop: Platform.OS === "ios" ? hp(1.6) : hp(0),
     marginHorizontal: wp(8),
   },
   settingEverythingHighlight: {
-    color: "#6A4CFF",
+    color: "#6A4CFF", // keep brand/accent color
   },
   progressTopMargin: {
     marginTop: Platform.OS === "ios" ? hp(4) : hp(3),
@@ -267,7 +266,7 @@ const styles = StyleSheet.create({
   processingYour: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(17),
-    color: "#FFFFFF",
+    color: "#666666",
     marginTop: Platform.OS === "ios" ? hp(4) : hp(3.5),
     textAlign: "center",
     marginHorizontal: wp(8),
@@ -276,8 +275,8 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === "ios" ? hp(4) : hp(3),
     width: scaleWidth(400),
     height: scaleHeight(400),
-    // backgroundColor: "#1A1A1A",
-    // borderRadius: 12,
+    backgroundColor: "#F5F5F5",
+    borderRadius: 12,
   },
   illustrationContainer: {
     marginTop: Platform.OS === "ios" ? hp(4) : hp(3),

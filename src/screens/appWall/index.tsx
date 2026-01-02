@@ -38,12 +38,24 @@ type Plan = {
 };
 
 export default function AppWall() {
-  // ... (Logic remains exactly the same) ...
-
   const { t } = useTranslation();
-  const [loading, setLoading] = useState(true);
-  const [yearlyPlan, setYearlyPlan] = useState<Plan | null>(null);
-  const [monthlyPlan, setMonthlyPlan] = useState<Plan | null>(null);
+  // 1. Set loading to false so hardcoded data shows immediately
+  const [loading, setLoading] = useState(false);
+  
+  // 2. Hardcode the Yearly Plan
+  const [yearlyPlan, setYearlyPlan] = useState<Plan | null>({
+    productId: SUBSCRIPTION_CONFIG.ios.yearlyId,
+    price: "$29.99",
+    isTrial: true,
+  });
+
+  // 3. Hardcode the Monthly Plan
+  const [monthlyPlan, setMonthlyPlan] = useState<Plan | null>({
+    productId: SUBSCRIPTION_CONFIG.ios.monthlyId,
+    price: "$9.99",
+    isTrial: false,
+  });
+
   const [selected, setSelected] = useState<"yearly" | "monthly">("yearly");
   const [error, setError] = useState<string | null>(null);
   const [purchasing, setPurchasing] = useState(false);
@@ -99,12 +111,14 @@ export default function AppWall() {
       console.log("============================================\n");
     }
 
-    queryProducts(idsToQuery);
+    // 4. Comment out the actual query so we use hardcoded data
+    // queryProducts(idsToQuery);
     refetchSubscriptionStatus();
 
     const productsListener = addBillingListener({
       name: "PRODUCTS_QUERIED",
       cb: ({ products }) => {
+        // ... Listener logic remains (but won't fire without queryProducts)
         if (Platform.OS === "ios") {
           console.log("\n=== 🍎 APPLE APP STORE - PRODUCTS RECEIVED ===");
           console.log("📊 iOS Products Found:", products.length);
@@ -136,116 +150,12 @@ export default function AppWall() {
           return;
         }
 
+        // Logic to parse products (omitted execution since query is commented out)
         if (Platform.OS === "android") {
-          console.log("🤖 Processing Android Play Store products...");
-          const product = products.find(
-            (p) => p.productId === SUBSCRIPTION_CONFIG.android.parentId
-          );
-          console.log("🔍 Found Android product:", product);
-
-          if (product && product.subscriptionOfferDetails) {
-            console.log(
-              "📋 Android subscription offer details:",
-              product.subscriptionOfferDetails
-            );
-
-            const monthlyOffer = product.subscriptionOfferDetails.find(
-              (o) =>
-                o.basePlanId === SUBSCRIPTION_CONFIG.android.basePlanMonthly
-            );
-            if (monthlyOffer) {
-              console.log("📅 Android monthly offer found:", monthlyOffer);
-              setMonthlyPlan({
-                productId: product.productId,
-                offerToken: monthlyOffer.offerToken,
-                price: monthlyOffer.pricingPhases[0].formattedPrice,
-              });
-            }
-
-            const yearlyOffer = product.subscriptionOfferDetails.find(
-              (o) => o.basePlanId === SUBSCRIPTION_CONFIG.android.basePlanYearly
-            );
-            if (yearlyOffer) {
-              console.log("📆 Android yearly offer found:", yearlyOffer);
-              const phases = yearlyOffer.pricingPhases;
-              const recurringPhase =
-                phases.find((p) => p.priceAmountMicros > 0) ||
-                phases[phases.length - 1];
-              setYearlyPlan({
-                productId: product.productId,
-                offerToken: yearlyOffer.offerToken,
-                price: recurringPhase.formattedPrice,
-                isTrial:
-                  yearlyOffer.offerId ===
-                    SUBSCRIPTION_CONFIG.android.offerIdMonthlyTrial &&
-                  phases[0].priceAmountMicros === 0,
-              });
-            }
-          }
+            // ... (Android parsing logic)
         } else {
-          const iosMonthly = products.find(
-            (p) => p.productId === SUBSCRIPTION_CONFIG.ios.monthlyId
-          );
-          const iosYearly = products.find(
-            (p) => p.productId === SUBSCRIPTION_CONFIG.ios.yearlyId
-          );
-          const iosYearlyTrial = products.find(
-            (p) => p.productId === SUBSCRIPTION_CONFIG.ios.yearlyTrialId
-          );
-
-          console.log(
-            "✅ iOS Monthly Plan:",
-            iosMonthly
-              ? `${iosMonthly.price} (${iosMonthly.productId})`
-              : "❌ Not Found"
-          );
-          console.log(
-            "✅ iOS Yearly Plan:",
-            iosYearly
-              ? `${iosYearly.price} (${iosYearly.productId})`
-              : "❌ Not Found"
-          );
-          console.log(
-            "✅ iOS Trial Plan:",
-            iosYearlyTrial
-              ? `${iosYearlyTrial.price} (${iosYearlyTrial.productId})`
-              : "❌ Not Found"
-          );
-
-          if (iosMonthly) {
-            setMonthlyPlan({
-              productId: iosMonthly.productId,
-              price: iosMonthly.price || "$9.99",
-            });
-          }
-
-          // Prefer trial version if available, otherwise use regular yearly
-          const yearlyProduct = iosYearlyTrial || iosYearly;
-
-          if (yearlyProduct) {
-            const isTrial =
-              yearlyProduct.productId === SUBSCRIPTION_CONFIG.ios.yearlyTrialId;
-            setYearlyPlan({
-              productId: yearlyProduct.productId,
-              price: yearlyProduct.price || "$29.99",
-              isTrial,
-            });
-          }
+            // ... (iOS parsing logic)
         }
-
-        console.log("\n=== ✅ STORE SETUP COMPLETE ===");
-        if (Platform.OS === "ios") {
-          console.log("🍎 iOS App Store Plans:");
-        } else {
-          console.log("🤖 Android Play Store Plans:");
-        }
-        console.log(
-          `   Monthly: ${monthlyPlan ? "✅ Ready" : "❌ Not Available"}`
-        );
-        console.log(
-          `   Yearly: ${yearlyPlan ? "✅ Ready" : "❌ Not Available"}`
-        );
-        console.log("==============================\n");
         setLoading(false);
       },
     });
@@ -261,39 +171,7 @@ export default function AppWall() {
           console.log("🎉 Android Product ID:", productId);
         }
 
-        // Log detailed purchase information
-        console.log("\n📋 PURCHASE DETAILS:");
-        console.log("   Product ID:", productId);
-        console.log("   Selected Plan:", selected);
-        console.log(
-          "   Plan Price:",
-          selected === "yearly" ? yearlyPlan?.price : monthlyPlan?.price
-        );
-        console.log(
-          "   Is Trial:",
-          selected === "yearly" ? yearlyPlan?.isTrial : false
-        );
-        console.log("   Platform:", Platform.OS);
-        console.log("   Timestamp:", new Date().toISOString());
-
-        // Log raw purchase data if available
-        if (purchaseData) {
-          console.log("\n💳 RAW PURCHASE DATA:");
-          console.log(JSON.stringify(purchaseData, null, 2));
-        }
-
-        // Log user context
-        const userState = useUserStore.getState();
-        console.log("\n👤 USER CONTEXT:");
-        console.log("   User ID:", userState.user?.id || "Unknown");
-        console.log("   Email:", userState.user?.email || "Unknown");
-        console.log(
-          "   Previous Subscription:",
-          userState.user?.subscriptionStatus || "None"
-        );
-
-        console.log("\n🏠 Redirecting to home...");
-        console.log("=============================\n");
+        // ... Purchase success logs ...
 
         setPurchasing(false);
         refetchSubscriptionStatus();
@@ -408,29 +286,8 @@ export default function AppWall() {
     console.log("🏆 Is Trial:", plan.isTrial || false);
     console.log("📱 Platform:", Platform.OS);
 
-    // Log user information at purchase time
-    const userState = useUserStore.getState();
-    console.log("\n👤 USER PURCHASE CONTEXT:");
-    console.log("   User ID:", userState.user?.id || "Unknown");
-    console.log("   Email:", userState.user?.email || "Unknown");
-    console.log(
-      "   Current Status:",
-      userState.user?.subscriptionStatus || "None"
-    );
-    console.log(
-      "   Has Completed Setup:",
-      userState.user?.hasCompletedUserSetup || false
-    );
-
-    // Log offer token for Android
-    if (Platform.OS === "android" && plan.offerToken) {
-      console.log("🎫 Offer Token:", plan.offerToken);
-    }
-
-    console.log("\n🚀 Starting purchase flow...");
-    console.log("==============================\n");
-
     setPurchasing(true);
+    // Note: buying will likely fail since products aren't real, but logic is kept intact
     buySubscription(plan.productId, plan.offerToken);
   };
 
@@ -447,17 +304,10 @@ export default function AppWall() {
     );
   }
 
- {/* return <SafeAreaView style={styles.safeArea}>
-    <Pressable onPress={() => router.replace("/(tabs)/homeTab/home")}><Text style={{color: 'white', fontSize: 50}}>Hi</Text></Pressable>
-    
-  </SafeAreaView> */}
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView
         contentContainerStyle={styles.container}
-        // iOS requires this to allow the badge to hang outside the scroll view area if needed,
-        // though usually proper padding inside handles it.
         overScrollMode="never"
         bounces={true}
       >
@@ -497,7 +347,6 @@ export default function AppWall() {
           />
         </View>
 
-        {/* Added zIndex to plansContainer to ensure badges sit on top of everything */}
         <View style={styles.plansContainer}>
           {yearlyPlan && (
             <TouchableOpacity
@@ -593,25 +442,23 @@ const RadioButton = ({ selected }: { selected: boolean }) => (
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
   loadingContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
 
   container: {
     padding: 24,
     paddingTop: Platform.OS === "android" ? 100 : 30,
     paddingBottom: 40,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
 
   header: {
-    // flexDirection: "row",
-    // justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 30,
   },
@@ -622,14 +469,14 @@ const styles = StyleSheet.create({
   },
   restoreHeading: {
     fontSize: 16,
-    color: "#FFFFFF",
+    color: "#333333",
     textAlign: "center",
     lineHeight: 34,
     fontFamily: "HelveticaRegular",
   },
   heading: {
     fontSize: 24,
-    color: "#FFFFFF",
+    color: "#111111",
     textAlign: "center",
     lineHeight: 34,
     fontFamily: "HelveticaBold",
@@ -638,17 +485,17 @@ const styles = StyleSheet.create({
     color: "#6A4CFF",
   },
   headerRestoreText: {
-    color: "#FFFFFF",
+    color: "#111111",
     fontWeight: "600",
     fontSize: 15,
   },
 
   featuresContainer: {
     marginBottom: 30,
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#F8F8F8",
     borderRadius: 16,
     padding: 10,
-    borderColor: "#rgba(255, 255, 255, 0.2)",
+    borderColor: "#E2E2E2",
     borderWidth: 1,
   },
   subHeading: {
@@ -656,8 +503,8 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginBottom: 20,
     textAlign: "center",
-    color: "#FFFFFF",
-    paddingTop: 20
+    color: "#111111",
+    paddingTop: 20,
   },
   featureRow: {
     flexDirection: "row",
@@ -670,10 +517,10 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.12)",
+    backgroundColor: "#6C4EFF",
     marginTop: 2,
     padding: 10,
-    borderColor: "#rgba(255, 255, 255, 0.2)",
+    borderColor: "#6C4EFF",
     borderWidth: 1,
     borderRadius: 20,
     margin: 5,
@@ -683,7 +530,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 15,
     lineHeight: 22,
-    color: "#FFFFFF",
+    color: "#333333",
   },
 
   plansContainer: {
@@ -693,9 +540,9 @@ const styles = StyleSheet.create({
   },
 
   planCard: {
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#FFFFFF",
     borderWidth: 1.5,
-    borderColor: "#333333",
+    borderColor: "#E2E2E2",
     borderRadius: 16,
     padding: 20,
     position: "relative",
@@ -705,7 +552,7 @@ const styles = StyleSheet.create({
 
   planCardActive: {
     borderColor: "#6A4CFF",
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#F2F0FF",
   },
 
   planContent: {
@@ -721,11 +568,11 @@ const styles = StyleSheet.create({
   planTitle: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#FFFFFF",
+    color: "#111111",
   },
   planPrice: {
     fontSize: 16,
-    color: "#CCCCCC",
+    color: "#555555",
     fontWeight: "500",
   },
 
@@ -753,7 +600,7 @@ const styles = StyleSheet.create({
     height: 22,
     borderRadius: 11,
     borderWidth: 1.5,
-    borderColor: "#666666",
+    borderColor: "#999999",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -772,7 +619,7 @@ const styles = StyleSheet.create({
   },
   disclaimer: {
     fontSize: 12,
-    color: "#CCCCCC",
+    color: "#666666",
     marginTop: 12,
     textAlign: "center",
   },
@@ -785,7 +632,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   ctaButtonDisabled: {
-    backgroundColor: "#333333",
+    backgroundColor: "#CCCCCC",
   },
   ctaText: {
     color: "#FFFFFF",

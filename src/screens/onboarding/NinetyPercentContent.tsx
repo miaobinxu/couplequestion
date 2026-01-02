@@ -209,7 +209,6 @@ const NinetyPercentContent: React.FC<NinetyPercentContentProps> = React.memo(
     );
   }
 );
-
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
@@ -219,7 +218,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(28),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
     marginRight: wp(4),
@@ -228,14 +227,14 @@ const styles = StyleSheet.create({
   subTitle: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#333333",
     marginLeft: wp(5.5),
     marginTop: Platform.OS === "ios" ? hp(2) : hp(0.7),
   },
   input: {
     width: scaleWidth(361),
     height: scaleHeight(54),
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#F5F5F5",
     borderWidth: 1.2,
     borderColor: "#7C8CD8",
     paddingHorizontal: wp(4),
@@ -244,19 +243,20 @@ const styles = StyleSheet.create({
     marginTop: hp(4),
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
   },
   buttonPart: {
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
+    borderTopColor: "#E5E5E5",
     paddingBottom: hp(2),
   },
   keyboardButtonContainer: {
     position: "absolute",
     left: 0,
     right: 0,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
     paddingVertical: hp(2),
     paddingHorizontal: wp(5.5),
   },

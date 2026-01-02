@@ -15,7 +15,11 @@ import {
 import ButtonWithFeedback from "@reusable-components/buttons/ButtonWithFeedback";
 import { isIphoneSE } from "@/src/utilities/check-mobile-device";
 import { useOnboardingStore } from "@global-store/onboarding-store";
-import { scaleFont, scaleHeight, scaleWidth } from "@utilities/responsive-design";
+import {
+  scaleFont,
+  scaleHeight,
+  scaleWidth,
+} from "@utilities/responsive-design";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTranslation } from "@/src/hooks/use-translation";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -99,8 +103,7 @@ const ThirtyPercentContent: React.FC<ThirtyPercentContentProps> = React.memo(
                   display="spinner"
                   maximumDate={new Date()}
                   onChange={handleDateChange}
-                  themeVariant="dark"
-                  textColor="#FFFFFF"
+                  themeVariant="light"
                 />
               ) : (
                 <Suspense
@@ -119,12 +122,10 @@ const ThirtyPercentContent: React.FC<ThirtyPercentContentProps> = React.memo(
 
             <View style={{ marginTop: hp(5) }} />
 
-            
-
             <View style={styles.infoContainer}>
               <View style={styles.illustrationContainer}>
-              <SterlitziaPlant width="100%" height="100%" />
-            </View>
+                <SterlitziaPlant width="100%" height="100%" />
+              </View>
               <Text style={styles.infoTitle}>
                 Going strong well beyond the early years.
               </Text>
@@ -155,16 +156,15 @@ const ThirtyPercentContent: React.FC<ThirtyPercentContentProps> = React.memo(
     );
   }
 );
-
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
   title: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(28),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
     marginRight: wp(6),
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(14),
-    color: "#AAAAAA",
+    color: "#666666",
     marginLeft: wp(5.5),
     marginTop: hp(2),
     marginRight: wp(6),
@@ -182,11 +182,11 @@ const styles = StyleSheet.create({
   sectionLabel: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(5.5),
   },
   dateCard: {
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#F8F8F8",
     marginHorizontal: wp(5.5),
     marginTop: hp(2),
     borderRadius: 14,
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
   dateText: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
   },
   datePickerContainer: {
     marginTop: hp(2),
@@ -211,13 +211,13 @@ const styles = StyleSheet.create({
   infoTitle: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
     textAlign: "center",
   },
   infoText: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(14),
-    color: "#AAAAAA",
+    color: "#666666",
     marginTop: hp(1.5),
     textAlign: "center",
     lineHeight: scaleFont(20),
@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
+    borderTopColor: "#E5E5E5",
     paddingBottom: hp(2),
   },
   illustrationContainer: {
@@ -233,6 +234,7 @@ const styles = StyleSheet.create({
     height: scaleHeight(300),
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: hp(2),
   },
 });
 

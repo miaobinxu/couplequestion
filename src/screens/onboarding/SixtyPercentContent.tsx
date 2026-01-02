@@ -111,16 +111,15 @@ const SixtyPercentContent: React.FC<SixtyPercentContentProps> = React.memo(
     );
   }
 );
-
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
   title: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(28),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
     marginRight: wp(6),
@@ -133,46 +132,47 @@ const styles = StyleSheet.create({
     marginHorizontal: wp(5.5),
   },
 
-  /* BACK CARD */
+  /* WITHOUT CARD */
   withoutCard: {
     position: "absolute",
     top: hp(4),
     left: 0,
     width: "55%",
-    backgroundColor: "#111111",
+    backgroundColor: "#6C4EFF0D",
     borderRadius: 20,
     padding: wp(4),
     borderWidth: 1,
-    borderColor: "#2A2A2A",
+    borderColor: "#6C4EFF33",
     zIndex: 1,
   },
   withoutTitle: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
     marginBottom: hp(2),
   },
 
+  /* WITH CARD */
   withCard: {
     position: "absolute",
     top: 0,
     right: 0,
     width: "55%",
-    backgroundColor: "#E6E0FF",
+    backgroundColor: "#E2DCFF",
     borderRadius: 20,
     padding: wp(4),
     zIndex: 2,
 
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.15,
     shadowRadius: 16,
-    elevation: 12,
+    elevation: 10,
   },
   withTitle: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(16),
-    color: "#000000",
+    color: "#111111",
     marginBottom: hp(2),
   },
 
@@ -187,13 +187,13 @@ const styles = StyleSheet.create({
     height: 22,
     borderRadius: 11,
     borderWidth: 1.5,
-    borderColor: "#999999",
+    borderColor: "#B0B0B0",
     alignItems: "center",
     justifyContent: "center",
     marginRight: wp(2),
   },
   minus: {
-    color: "#999999",
+    color: "#B0B0B0",
     fontSize: 14,
     fontWeight: "bold",
   },
@@ -201,47 +201,50 @@ const styles = StyleSheet.create({
     width: 22,
     height: 22,
     borderRadius: 11,
-    backgroundColor: "#6A4CFF",
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "#6C4EFF",
     alignItems: "center",
     justifyContent: "center",
     marginRight: wp(2),
   },
   check: {
-    color: "#FFFFFF",
+    color: "#6C4EFF",
     fontSize: 14,
     fontWeight: "bold",
   },
 
   withoutText: {
-    color: "#AAAAAA",
+    color: "#666666",
     fontSize: scaleFont(13),
     flex: 1,
   },
   withText: {
-    color: "#000000",
+    color: "#111111",
     fontSize: scaleFont(13),
     flex: 1,
   },
 
-  /* Updated container for SVG (removed background color) */
+  /* SVG / Illustration */
   illustrationContainer: {
     height: hp(14),
     marginTop: hp(2),
     borderRadius: 12,
-    overflow: "hidden", // Ensures SVG stays within rounded corners
+    overflow: "hidden",
   },
   
   illustrationPlaceholderMuted: {
     height: hp(14),
     marginTop: hp(2),
     borderRadius: 12,
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#EFEFEF",
   },
 
   buttonPart: {
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
+    borderTopColor: "#E5E5E5",
     paddingBottom: hp(2),
   },
 });

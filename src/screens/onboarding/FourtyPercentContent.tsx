@@ -114,16 +114,15 @@ const FourtyPercentContent: React.FC<FourtyPercentContentProps> = React.memo(
     );
   }
 );
-
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
   title: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(28),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
     marginRight: wp(6),
@@ -137,18 +136,18 @@ const styles = StyleSheet.create({
     paddingVertical: hp(2),
     paddingHorizontal: wp(4),
     borderRadius: 14,
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#F8F8F8",
     borderWidth: 1,
-    borderColor: "#2A2A2A",
+    borderColor: "#E2E2E2",
   },
   optionCardActive: {
     borderColor: "#6A4CFF",
-    backgroundColor: "#141414",
+    backgroundColor: "#F2F0FF",
   },
   optionText: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(4),
   },
   radioOuter: {
@@ -156,7 +155,7 @@ const styles = StyleSheet.create({
     height: 22,
     borderRadius: 11,
     borderWidth: 2,
-    borderColor: "#666666",
+    borderColor: "#999999",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -173,6 +172,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
+    borderTopColor: "#E5E5E5",
     paddingBottom: hp(2),
   },
 });

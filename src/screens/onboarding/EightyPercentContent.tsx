@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "HelveticaBold",
     fontSize: scaleFont(32),
-    color: "#FFFFFF",
+    color: "#111111",
     marginTop: hp(0.6),
   },
   reviewRating: {
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   subTitle: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(17),
-    color: "#FFFFFF",
+    color: "#333333",
     marginTop: hp(4.6),
     textAlign: "center",
   },
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   },
   reviewCard: {
     width: scaleWidth(362),
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#F8F8F8",
     borderRadius: 15,
     marginTop: hp(6),
     paddingBottom: hp(2),
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   },
   avatar: {
     marginLeft: wp(3),
-    borderColor: "#FFFFFF",
+    borderColor: "#E5E5E5",
     borderWidth: 1.5,
     width: scaleWidth(50),
     height: scaleWidth(50),
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: "HelveticaRegular",
     fontSize: scaleFont(16),
-    color: "#FFFFFF",
+    color: "#111111",
     marginLeft: wp(3),
   },
   stars: {
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
   },
   reviewText: {
     fontSize: scaleFont(17),
-    color: "#FFFFFF",
+    color: "#333333",
     lineHeight: Platform.OS === "ios" ? wp(6) : wp(7),
     fontFamily: "HelveticaRegular",
     marginTop: hp(2),
@@ -233,12 +233,13 @@ const styles = StyleSheet.create({
     marginTop: hp(-2.5),
   },
   buttonPart: {
-    // flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
+    borderTopColor: "#E5E5E5",
     paddingBottom: hp(2),
   },
 });
+
 
 export default EightyPercentContent;
