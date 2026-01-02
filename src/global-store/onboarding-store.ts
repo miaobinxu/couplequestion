@@ -17,6 +17,10 @@ const initialState: Onboarding = {
   birthDate: undefined,
   birthLocation: "",
   birthTime: undefined,
+  relationshipDuration: undefined,
+  relationshipStatus: "relationship",
+  relationshipGoals: []
+
 };
 
 export const useOnboardingStore = create<Onboarding & OnboardingActions>()(

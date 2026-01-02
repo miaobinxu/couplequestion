@@ -8,6 +8,7 @@ import {
   ScrollView,
   SafeAreaView,
   Platform,
+  Pressable,
 } from "react-native";
 import {
   queryProducts,
@@ -446,6 +447,11 @@ export default function AppWall() {
     );
   }
 
+ {/* return <SafeAreaView style={styles.safeArea}>
+    <Pressable onPress={() => router.replace("/(tabs)/homeTab/home")}><Text style={{color: 'white', fontSize: 50}}>Hi</Text></Pressable>
+    
+  </SafeAreaView> */}
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView
@@ -463,31 +469,31 @@ export default function AppWall() {
 
         <View style={styles.header}>
           <Text style={styles.heading}>
-            Unlock full{"\n"}access to{" "}
-            <Text style={styles.brandHighlight}>inSky</Text>
+            Everything is ready
           </Text>
+          <Text style={styles.subHeading}>Unlock Couples for free</Text>
         </View>
 
         <View style={styles.featuresContainer}>
           <FeatureItem
             IconComponent={LifePaywall}
             iconName="FeatureItem"
-            text="Call the universe for advice on love, timing, and life"
+            text="3,000+ psychology-backed questions"
           />
           <FeatureItem
             IconComponent={HeartPaywall}
             iconName="heart"
-            text="Compatibility Check on romantic interests"
+            text="4 unique modes: Soulmate, Spicy, Long Distance & more"
           />
           <FeatureItem
             IconComponent={InsightsPaywall}
             iconName="message-circle"
-            text="Get relationship advice in real time for love insights"
+            text="Fun games & quizzes to play together"
           />
           <FeatureItem
             IconComponent={Starpaywall}
             iconName="star"
-            text="Personalized daily horoscopes to achieve your dreams"
+            text="Unlimited access, no waiting"
           />
         </View>
 
@@ -554,7 +560,7 @@ export default function AppWall() {
           ) : (
             <Text style={styles.ctaText}>
               {selected === "yearly"
-                ? yearlyPlan?.isTrial
+                ? true //yearlyPlan?.isTrial
                   ? t("appWall.startTrial")
                   : t("appWall.startYearly")
                 : t("appWall.startMonthly")}
@@ -584,9 +590,6 @@ const RadioButton = ({ selected }: { selected: boolean }) => (
   </View>
 );
 
-// ----------------------------------------------------
-// UPDATED STYLES FOR iOS
-// ----------------------------------------------------
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
@@ -649,11 +652,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   subHeading: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: "700",
     marginBottom: 20,
     textAlign: "center",
     color: "#FFFFFF",
+    paddingTop: 20
   },
   featureRow: {
     flexDirection: "row",

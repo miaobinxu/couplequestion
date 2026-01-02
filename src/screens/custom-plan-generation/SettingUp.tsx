@@ -25,6 +25,8 @@ import { useUserStore } from "@/src/global-store/user-store";
 import { useOnboardingStore } from "@/src/global-store/onboarding-store";
 import { useTranslation } from "@/src/hooks/use-translation";
 
+import Progress from "@assets/svg/Progress.svg"
+
 const SettingUp: React.FC = () => {
   // to disable back button press on Android (we don't allow going back to the previous screen)
   const onBackPress = useCallback(() => true, []);
@@ -216,16 +218,21 @@ const SettingUp: React.FC = () => {
           transform: [{ translateX: animatedValue }],
         }}
       >
-        {texts[textIndex]}
+        {/*texts[textIndex]*/}
+        Processing your relation priorities...
       </Animated.Text>
-      <LottieView
+
+      <View style={styles.illustrationContainer}>
+                  <Progress width="100%" height="100%" />
+                </View>
+     {/* <LottieView
         autoPlay={true}
         loop={true}
         style={styles.animation}
         source={zodiacAnimationSource}
         renderMode="HARDWARE"
         resizeMode="cover"
-      />
+      />*/}
     </SafeAreaView>
   );
 };
@@ -271,6 +278,11 @@ const styles = StyleSheet.create({
     height: scaleHeight(400),
     // backgroundColor: "#1A1A1A",
     // borderRadius: 12,
+  },
+  illustrationContainer: {
+    marginTop: Platform.OS === "ios" ? hp(4) : hp(3),
+    width: scaleWidth(400),
+    height: scaleHeight(400),
   },
 });
 

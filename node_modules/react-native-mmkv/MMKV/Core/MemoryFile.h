@@ -23,7 +23,6 @@
 #ifdef __cplusplus
 
 #include "MMKVPredef.h"
-#include <cstdint>
 #include <functional>
 
 #ifdef MMKV_ANDROID
@@ -47,7 +46,6 @@ enum class OpenFlag : uint32_t {
     Excel = 1 << 3, // fail if Create is set but the file already exist
     Truncate = 1 << 4,
 };
-constexpr uint32_t OpenFlagRWMask = 0x3; // mask for Read Write mode
 
 static inline OpenFlag operator | (OpenFlag left, OpenFlag right) {
     return static_cast<OpenFlag>(static_cast<uint32_t>(left) | static_cast<uint32_t>(right));
@@ -55,10 +53,6 @@ static inline OpenFlag operator | (OpenFlag left, OpenFlag right) {
 
 static inline bool operator & (OpenFlag left, OpenFlag right) {
     return ((static_cast<uint32_t>(left) & static_cast<uint32_t>(right)) != 0);
-}
-
-static inline OpenFlag operator & (OpenFlag left, uint32_t right) {
-    return static_cast<OpenFlag>(static_cast<uint32_t>(left) & right);
 }
 
 template <typename T>
@@ -114,7 +108,6 @@ class MemoryFile {
 #endif
     void *m_ptr;
     size_t m_size;
-    const bool m_readOnly;
 
     bool mmap();
 
@@ -122,9 +115,9 @@ class MemoryFile {
 
 public:
 #ifndef MMKV_ANDROID
-    explicit MemoryFile(MMKVPath_t path, size_t expectedCapacity = 0, bool readOnly = false);
+    explicit MemoryFile(MMKVPath_t path, size_t expectedCapacity = 0);
 #else
-    MemoryFile(MMKVPath_t path, size_t size, FileType fileType, size_t expectedCapacity = 0, bool readOnly = false);
+    MemoryFile(MMKVPath_t path, size_t size, FileType fileType, size_t expectedCapacity = 0);
     explicit MemoryFile(MMKVFileHandle_t ashmemFD);
 
     const FileType m_fileType;

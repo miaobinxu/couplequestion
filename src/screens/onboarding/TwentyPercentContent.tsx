@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { useState, useCallback } from "react";
 import {
   StyleSheet,
   View,
   Text,
   Platform,
   ScrollView,
-  ActivityIndicator,
+  Pressable,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
@@ -17,40 +17,32 @@ import { useOnboardingStore } from "@global-store/onboarding-store";
 import { scaleFont } from "@utilities/responsive-design";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTranslation } from "@/src/hooks/use-translation";
-import DateTimePicker from "@react-native-community/datetimepicker";
-
-const InlineDatePicker = React.lazy(
-  () => import("@/src/components/InlineDatePicker")
-);
 
 interface TwentyPercentContentProps {
   updateProgressBar: (progress: number) => void;
   continueLabel?: string;
 }
 
+const GENDER_OPTIONS = [
+  { key: "female", label: "Female" },
+  { key: "male", label: "Male" },
+  { key: "non_binary", label: "Gender queer / Non-binary" },
+  { key: "other", label: "Other" },
+];
+
 const TwentyPercentContent: React.FC<TwentyPercentContentProps> = React.memo(
   ({ updateProgressBar, continueLabel = "Continue" }) => {
-    const { birthDate, updateOnboarding } = useOnboardingStore();
+    const { gender, updateOnboarding } = useOnboardingStore();
     const { t } = useTranslation();
 
-    const [selectedDate, setSelectedDate] = useState<Date>(() => {
-      if (
-        birthDate &&
-        birthDate instanceof Date &&
-        !isNaN(birthDate.getTime())
-      ) {
-        return birthDate;
-      }
-      return new Date(2000, 0, 1);
-    });
-    const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
+    const [selectedGender, setSelectedGender] = useState<string | undefined>(
+      gender
+    );
 
-    const handleDateChange = useCallback(
-      (event: any, date?: Date) => {
-        if (date) {
-          setSelectedDate(date);
-          updateOnboarding({ birthDate: date });
-        }
+    const handleSelect = useCallback(
+      (value: string) => {
+        setSelectedGender(value);
+        updateOnboarding({ gender: value });
       },
       [updateOnboarding]
     );
@@ -59,61 +51,46 @@ const TwentyPercentContent: React.FC<TwentyPercentContentProps> = React.memo(
       updateProgressBar(0.3);
     }, [updateProgressBar]);
 
-    const formatDate = (date: Date) => {
-      if (!date || !(date instanceof Date) || isNaN(date.getTime())) {
-        return "JAN 1, 2000";
-      }
-      const day = date.getDate();
-      const month = date
-        .toLocaleString("default", { month: "short" })
-        .toUpperCase();
-      const year = date.getFullYear();
-      return `${month} ${day}, ${year}`;
-    };
-
     return (
       <>
         <View style={styles.contentPart}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <Text style={styles.title}>{t("onboarding.birthDate.title")}</Text>
+            <Text style={styles.title}>
+              Which gender describes you best?
+            </Text>
 
-            <View style={styles.dateDisplayContainer}>
-              <Text style={styles.dateDisplay}>{formatDate(selectedDate)}</Text>
-            </View>
+            <View style={{ marginTop: hp(6) }} />
 
-            <View style={{ marginTop: hp(10) }}></View>
-            <View style={styles.datePickerContainer}>
-              {Platform.OS === "ios" ? (
-                <DateTimePicker
-                  value={selectedDate}
-                  mode="date"
-                  display="spinner"
-                  onChange={handleDateChange}
-                  maximumDate={new Date()}
-                  minimumDate={new Date(1900, 0, 1)}
-                  textColor="#FFFFFF"
-                  themeVariant="dark"
-                  style={styles.datePicker}
-                  locale="en-US"
-                />
-              ) : (
-                <Suspense
-                  fallback={<ActivityIndicator size="large" color="#6A4CFF" />}
+            {GENDER_OPTIONS.map((option) => {
+              const isSelected = selectedGender === option.key;
+
+              return (
+                <Pressable
+                  key={option.key}
+                  style={[
+                    styles.optionCard,
+                    isSelected && styles.optionCardActive,
+                  ]}
+                  onPress={() => handleSelect(option.key)}
                 >
-                  <InlineDatePicker
-                    initialDate={selectedDate}
-                    onDateChange={(date) => {
-                      setSelectedDate(date);
-                      updateOnboarding({ birthDate: date });
-                    }}
-                  />
-                </Suspense>
-              )}
-            </View>
+                  <View
+                    style={[
+                      styles.radioOuter,
+                      isSelected && styles.radioOuterActive,
+                    ]}
+                  >
+                    {isSelected && <View style={styles.radioInner} />}
+                  </View>
 
-            <View style={{ marginTop: hp(2) }}></View>
+                  <Text style={styles.optionText}>{option.label}</Text>
+                </Pressable>
+              );
+            })}
+
+            <View style={{ marginTop: hp(2) }} />
           </ScrollView>
         </View>
+
         <SafeAreaView edges={["bottom"]}>
           <View style={styles.buttonPart}>
             <ButtonWithFeedback
@@ -123,11 +100,10 @@ const TwentyPercentContent: React.FC<TwentyPercentContentProps> = React.memo(
                   : continueLabel
               }
               marginTop={hp(1.5)}
-              backgroundColor={"#6A4CFF"}
-              textColor={"#FFFFFF"}
-              viewStyle={{
-                alignSelf: "center",
-              }}
+              backgroundColor={selectedGender ? "#6A4CFF" : "#333333"}
+              textColor={selectedGender ? "#FFFFFF" : "#666666"}
+              viewStyle={{ alignSelf: "center" }}
+              disabled={!selectedGender}
               onPress={handleContinue}
             />
           </View>
@@ -140,6 +116,7 @@ const TwentyPercentContent: React.FC<TwentyPercentContentProps> = React.memo(
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
+    backgroundColor: "#000000",
   },
   title: {
     fontFamily: "HelveticaBold",
@@ -147,30 +124,48 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
-    marginRight: wp(4),
+    marginRight: wp(6),
     lineHeight: scaleFont(36),
   },
-  dateDisplayContainer: {
+  optionCard: {
+    flexDirection: "row",
     alignItems: "center",
-    marginTop: hp(6),
-  },
-  dateDisplay: {
-    fontFamily: "HelveticaRegular",
-    fontSize: scaleFont(32),
-    color: "#FFFFFF",
-    textAlign: "center",
-  },
-  datePickerContainer: {
-    alignItems: "center",
-    marginTop: Platform.OS == "ios" ? hp(4) : hp(0),
-    backgroundColor: "transparent",
     marginHorizontal: wp(5.5),
+    marginBottom: hp(2),
     paddingVertical: hp(2),
+    paddingHorizontal: wp(4),
+    borderRadius: 14,
+    backgroundColor: "#1A1A1A",
+    borderWidth: 1,
+    borderColor: "#2A2A2A",
   },
-  datePicker: {
-    width: wp(80),
-    height: hp(20),
-    backgroundColor: "transparent",
+  optionCardActive: {
+    borderColor: "#6A4CFF",
+    backgroundColor: "#141414",
+  },
+  optionText: {
+    fontFamily: "HelveticaRegular",
+    fontSize: scaleFont(16),
+    color: "#FFFFFF",
+    marginLeft: wp(4),
+  },
+  radioOuter: {
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    borderWidth: 2,
+    borderColor: "#666666",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  radioOuterActive: {
+    borderColor: "#6A4CFF",
+  },
+  radioInner: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: "#6A4CFF",
   },
   buttonPart: {
     alignItems: "flex-start",

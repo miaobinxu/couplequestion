@@ -15,6 +15,8 @@ import { useRouter } from "expo-router";
 import { useOnboardingStore } from "@global-store/onboarding-store";
 import useInsetsInfo from "@hooks/use-insets-info";
 import { SafeAreaView } from "react-native-safe-area-context";
+import FiftyPercentContent from "./FiftyPercentContent";
+import SixtyPercentContent from "./SixtyPercentContent";
 
 const OnboardingDynamicStepper: React.FC = () => {
   const router = useRouter();
@@ -79,16 +81,19 @@ const OnboardingDynamicStepper: React.FC = () => {
           <FourtyPercentContent updateProgressBar={updateProgressBar} />
         )}
         {progress === 0.5 && (
-          <SeventyPercentContent updateProgressBar={updateProgressBar} />
+          <FiftyPercentContent updateProgressBar={updateProgressBar} />
+         // <SeventyPercentContent updateProgressBar={updateProgressBar} />
         )}
         {progress === 0.6 && (
-          <EightyPercentContent updateProgressBar={updateProgressBar} />
+          <SixtyPercentContent updateProgressBar={updateProgressBar} />
+         // <EightyPercentContent updateProgressBar={updateProgressBar} />
         )}
-        {(progress === 0.7 || progress === 1) && (
-          <NinetyPercentContent
-            progress={progress}
-            updateProgressBar={updateProgressBar}
-          />
+        {(progress === 0.7 ) && (
+          <EightyPercentContent updateProgressBar={updateProgressBar} />
+         // <NinetyPercentContent progress={progress} updateProgressBar={updateProgressBar}/>
+        )}
+        {(progress === 0.8  || progress === 1) && (
+          <NinetyPercentContent progress={progress} updateProgressBar={updateProgressBar}/>
         )}
       </View>
     </SafeAreaView>

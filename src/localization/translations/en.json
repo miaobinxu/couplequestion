@@ -18,12 +18,12 @@
   "foyer": {
     "twoMillion": "+2 million",
     "glowingUsers": "Glowing Users",
-    "createBestVersion": "Life advice & wisdom from the universe",
+    "createBestVersion": "Make connection a daily habit",
     "getStarted": "Get Started",
     "testimonials": {
-      "simpleExplanation": "\"“This has completely transformed my spiritual journey.”\"",
-      "adultAcne": "\"Finally got rid of adult acne lasting 3 years\"",
-      "easierChoice": "\"Makes choosing skin products so much easier\""
+      "simpleExplanation": "\"“We use this app every day. It's fun to discuss new and interesting questions. It really helped us grow together.”\"",
+      "adultAcne": "\"Very Good\"",
+      "easierChoice": "\"Makes life so much easier\""
     }
   },
   "tabs": {
@@ -237,7 +237,7 @@
     "rating": {
       "title": "Give us a rating",
       "subtitle": "Your journey to enlightenment starts\nhere.",
-      "usersCount": "+ 2M UpSkin users",
+      "usersCount": "+ 2M of users",
       "reviews": {
         "luke": {
           "name": "Luna Martinez",

@@ -84,18 +84,20 @@ const Foyer: React.FC = () => {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.scrollViewContentContainerStyle}
         >
-          <LottieView
+          {/* <LottieView
             autoPlay
             loop={true}
             ref={animation}
             style={styles.animation}
             source={require("@assets/lottie_animations/onboarding/hands-Moving.json")}
-          />
+          /> */}
+
+          <View style={{ flex: 1, minHeight: 350 }}></View>
           <View style={styles.leafAndGlowingUsersContainer}>
             <Image source={leafLeft} />
             <View style={styles.glowingUsersContainer}>
               <Text style={styles.twoMillion}>{t("foyer.twoMillion")}</Text>
-              <Text style={styles.glowingUsers}>{t("foyer.glowingUsers")}</Text>
+              <Text style={styles.glowingUsers}>{"Souls guided"}</Text>
             </View>
             <Image source={leafRight} />
           </View>
@@ -117,6 +119,7 @@ const Foyer: React.FC = () => {
           >
             {texts[textIndex]}
           </Animated.Text>
+            
         </ScrollView>
       </View>
       <SafeAreaView edges={["bottom"]}>

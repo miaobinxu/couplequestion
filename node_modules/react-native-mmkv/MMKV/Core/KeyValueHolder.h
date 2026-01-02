@@ -78,11 +78,7 @@ struct KeyValueHolderCrypt {
         return sizeof(KeyValueHolderCrypt) - offsetof(KeyValueHolderCrypt, paddedValue);
     }
 
-    static constexpr size_t MediumBufferSize() {
-        return 256;
-    }
-
-    static bool isValueStoredAsOffset(size_t valueSize) { return valueSize > MediumBufferSize(); }
+    static bool isValueStoredAsOffset(size_t valueSize) { return valueSize >= 256; }
 
     KeyValueHolderCrypt() = default;
     KeyValueHolderCrypt(const void *valuePtr, size_t valueLength);

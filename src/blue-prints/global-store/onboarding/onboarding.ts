@@ -50,6 +50,8 @@ export const skinTypeArray = [
 ] as const;
 export type SkinType = (typeof skinTypeArray)[number]['label'];
 
+export type RelationshipStatus = "relationship" | "engaged" | "civil_partnership" | "married";
+
 // skin concern (skin concern could be a list of any one or more of the below mentioned skin concerns)
 export const skinConcernArray = [
     'Acne',
@@ -110,15 +112,18 @@ export const reachGoalsSteps = [
 // final onboarding interface comprising all the above data
 export interface Onboarding {
     gender: Gender | '';
-    ageGroup: AgeGroup | '';
+    ageGroup?: AgeGroup | '';
     referralSource: ReferralSource | '';
-    skinType: SkinType | '';
-    skinConcern: SkinConcern;
-    skinGoal: SkinGoal;
-    referralCode: string;
+    skinType?: SkinType | '';
+    skinConcern?: SkinConcern;
+    skinGoal?: SkinGoal;
+    referralCode?: string;
     // Profile data fields
     name?: string;
     birthDate?: Date;
     birthLocation?: string;
     birthTime?: Date;
+    relationshipDuration?: Date;
+    relationshipStatus: RelationshipStatus;
+    relationshipGoals?: string[];
 }

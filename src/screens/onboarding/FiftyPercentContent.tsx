@@ -1,168 +1,114 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useCallback } from "react";
 import {
   StyleSheet,
   View,
   Text,
   Platform,
   ScrollView,
-  Animated,
+  Pressable,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import ButtonWithFeedback from "@reusable-components/buttons/ButtonWithFeedback";
-import ButtonWithoutFeedback from "@reusable-components/buttons/ButtonWithoutFeedback";
-import {
-  skinConcernArray,
-  SkinConcern,
-} from "@blue-prints/global-store/onboarding/onboarding";
 import { isIphoneSE } from "@/src/utilities/check-mobile-device";
-import * as Haptics from "expo-haptics";
 import { useOnboardingStore } from "@global-store/onboarding-store";
-import { scaleFont, scaleHeight } from "@utilities/responsive-design";
+import { scaleFont } from "@utilities/responsive-design";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useTranslation } from "@/src/hooks/use-translation";
 
 interface FiftyPercentContentProps {
   updateProgressBar: (progress: number) => void;
   continueLabel?: string;
 }
 
+const GOAL_OPTIONS = [
+  { key: "communication", label: "Communication" },
+  { key: "intimacy", label: "Intimacy" },
+  { key: "fun_creativity", label: "Fun & Creativity" },
+  { key: "mutual_growth", label: "Mutual Growth" },
+  { key: "just_fun", label: "Nothing, just have fun" },
+];
+
 const FiftyPercentContent: React.FC<FiftyPercentContentProps> = React.memo(
   ({ updateProgressBar, continueLabel = "Continue" }) => {
-    const { skinConcern, updateOnboarding } = useOnboardingStore();
-    const { t } = useTranslation();
+    const { relationshipGoals = [], updateOnboarding } =
+      useOnboardingStore();
 
-    useEffect(() => {
-      setSelectedSkinConcern(skinConcern);
-    }, [skinConcern]);
 
-    const [selectedSkinConcern, setSelectedSkinConcern] =
-      useState<string[]>(skinConcern);
+    const [selectedGoals, setSelectedGoals] =
+      useState<string[]>(relationshipGoals);
 
-    const handleSkinConcernSelect = useCallback(
-      async (skinConcernType: string) => {
-        await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        const updated = skinConcern.some((item) => item === skinConcernType)
-          ? skinConcern.filter((item) => item !== skinConcernType)
-          : [...skinConcern, skinConcernType];
-        updateOnboarding({ skinConcern: updated as SkinConcern });
+    const toggleGoal = useCallback(
+      (key: string) => {
+        setSelectedGoals((prev) => {
+          const updated = prev.includes(key)
+            ? prev.filter((g) => g !== key)
+            : [...prev, key];
+
+          updateOnboarding({ relationshipGoals: updated });
+          return updated;
+        });
       },
-      [skinConcern]
+      [updateOnboarding]
     );
 
     const handleContinue = useCallback(() => {
       updateProgressBar(0.6);
-    }, []);
-
-    const animatedValues = useRef(
-      Array.from(
-        { length: skinConcernArray.length },
-        () => new Animated.Value(0)
-      )
-    ).current;
-
-    useEffect(() => {
-      animatedValues.forEach((animatedValue) => {
-        Animated.spring(animatedValue, {
-          toValue: 1,
-          useNativeDriver: true,
-          delay: 100,
-        }).start();
-      });
-    }, []);
-
-    const getSkinConcernTranslation = (concern: string) => {
-      const keyMap: Record<string, string> = {
-        Acne: "acne",
-        Wrinkles: "wrinkles",
-        "Large pores": "largePores",
-        Pigmentation: "pigmentation",
-        "Dry skin": "drySkin",
-        Redness: "redness",
-      };
-      const key = keyMap[concern] || "acne";
-      return t(`onboarding.skinConcerns.${key}`);
-    };
+    }, [updateProgressBar]);
 
     return (
       <>
         <View style={styles.contentPart}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={styles.title}>
-              {t("onboarding.skinConcern.title")}
+              What areas of the relationship do you want to grow?
             </Text>
-            <Text style={styles.subTitle}>
-              {t("onboarding.skinConcern.subtitle")}
-            </Text>
-            {skinConcernArray.map((skinConcernType, index) => (
-              <Animated.View
-                key={skinConcernType}
-                style={{
-                  opacity: animatedValues[index],
-                  alignSelf: "center",
-                  transform: [
-                    {
-                      scale: animatedValues[index].interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [0.8, 1],
-                      }),
-                    },
-                  ],
-                }}
-              >
-                <ButtonWithoutFeedback
-                  text={getSkinConcernTranslation(skinConcernType)}
-                  onPress={() => handleSkinConcernSelect(skinConcernType)}
-                  marginTop={index === 0 ? hp(6) : hp(1.7)}
-                  fontFamily="CormorantGaramondBold"
-                  backgroundColor={
-                    selectedSkinConcern.includes(skinConcernType)
-                      ? "#7C8CD8"
-                      : "#ffffff"
-                  }
-                  textColor={
-                    selectedSkinConcern.includes(skinConcernType)
-                      ? "#FFFFFF"
-                      : "#000000"
-                  }
-                  viewStyle={{
-                    alignSelf: "center",
-                    borderRadius: 12,
-                    height: scaleHeight(69),
-                    shadowColor: "rgba(18, 55, 105, 0.06)",
-                    shadowOffset: {
-                      width: 1,
-                      height: 3,
-                    },
-                    shadowOpacity: 0.2,
-                    shadowRadius: 3,
-                    elevation: 4,
-                  }}
-                />
-              </Animated.View>
-            ))}
-            <View style={{ marginTop: hp(2) }}></View>
+
+            <Text style={styles.subtitle}>Select all that applies</Text>
+
+            <View style={{ marginTop: hp(5) }} />
+
+            {GOAL_OPTIONS.map((option) => {
+              const isSelected = selectedGoals.includes(option.key);
+
+              return (
+                <Pressable
+                  key={option.key}
+                  style={[
+                    styles.optionCard,
+                    isSelected && styles.optionCardActive,
+                  ]}
+                  onPress={() => toggleGoal(option.key)}
+                >
+                  <Text style={styles.optionText}>{option.label}</Text>
+
+                  {isSelected && (
+                    <View style={styles.checkCircle}>
+                      <Text style={styles.checkMark}>✓</Text>
+                    </View>
+                  )}
+                </Pressable>
+              );
+            })}
+
+            <View style={{ marginTop: hp(2) }} />
           </ScrollView>
         </View>
+
         <SafeAreaView edges={["bottom"]}>
           <View style={styles.buttonPart}>
             <ButtonWithFeedback
-              text={
-                continueLabel === "Continue"
-                  ? t("onboarding.continue")
-                  : continueLabel
-              }
+              text={continueLabel}
               marginTop={hp(1.5)}
               backgroundColor={
-                selectedSkinConcern.length > 0 ? "#698D5F" : "#edefef"
+                selectedGoals.length > 0 ? "#6A4CFF" : "#333333"
               }
-              textColor={selectedSkinConcern.length > 0 ? "#FFFFFF" : "#b8b9bb"}
-              viewStyle={{
-                alignSelf: "center",
-              }}
-              disabled={selectedSkinConcern.length === 0}
+              textColor={
+                selectedGoals.length > 0 ? "#FFFFFF" : "#666666"
+              }
+              viewStyle={{ alignSelf: "center" }}
+              disabled={selectedGoals.length === 0}
               onPress={handleContinue}
             />
           </View>
@@ -175,28 +121,63 @@ const FiftyPercentContent: React.FC<FiftyPercentContentProps> = React.memo(
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
+    backgroundColor: "#000000",
   },
   title: {
     fontFamily: "HelveticaBold",
-    fontSize: scaleFont(32),
-    color: "#1C1C1C",
+    fontSize: scaleFont(28),
+    color: "#FFFFFF",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
+    marginRight: wp(6),
+    lineHeight: scaleFont(36),
   },
-  subTitle: {
+  subtitle: {
     fontFamily: "HelveticaRegular",
-    fontSize: scaleFont(20),
-    color: "#1C1C1C",
+    fontSize: scaleFont(14),
+    color: "#AAAAAA",
     marginLeft: wp(5.5),
-    marginTop: Platform.OS === "ios" ? hp(2) : hp(0.7),
-    marginRight: wp(2),
+    marginTop: hp(1.5),
+  },
+  optionCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginHorizontal: wp(5.5),
+    marginBottom: hp(2),
+    paddingVertical: hp(2),
+    paddingHorizontal: wp(4),
+    borderRadius: 14,
+    backgroundColor: "#1A1A1A",
+    borderWidth: 1,
+    borderColor: "#2A2A2A",
+  },
+  optionCardActive: {
+    borderColor: "#6A4CFF",
+    backgroundColor: "#141414",
+  },
+  optionText: {
+    fontFamily: "HelveticaRegular",
+    fontSize: scaleFont(16),
+    color: "#FFFFFF",
+  },
+  checkCircle: {
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    backgroundColor: "#6A4CFF",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  checkMark: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "bold",
   },
   buttonPart: {
-    // flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
-    borderTopColor: "#ededed",
     paddingBottom: hp(2),
   },
 });

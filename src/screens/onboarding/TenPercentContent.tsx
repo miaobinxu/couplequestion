@@ -104,8 +104,7 @@ const TenPercentContent: React.FC<TenPercentContentProps> = React.memo(
         <View style={styles.contentPart}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={styles.title}>
-              Hey, I'm <Text style={styles.brandName}>inSky</Text>, what is your
-              name?
+              Add your name
             </Text>
             <TextInput
               style={styles.textInput}

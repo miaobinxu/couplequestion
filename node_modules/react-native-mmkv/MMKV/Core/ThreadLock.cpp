@@ -27,7 +27,7 @@ using namespace std;
 
 namespace mmkv {
 
-ThreadLock::ThreadLock() : m_lock({}) {
+ThreadLock::ThreadLock() {
     pthread_mutexattr_t attr;
     pthread_mutexattr_init(&attr);
     pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
@@ -38,9 +38,11 @@ ThreadLock::ThreadLock() : m_lock({}) {
 }
 
 ThreadLock::~ThreadLock() {
-    pthread_mutex_unlock(&m_lock);
-
     pthread_mutex_destroy(&m_lock);
+}
+
+void ThreadLock::initialize() {
+    return;
 }
 
 void ThreadLock::lock() {
@@ -60,10 +62,6 @@ void ThreadLock::unlock() {
 bool ThreadLock::try_lock() {
     auto ret = pthread_mutex_trylock(&m_lock);
     return (ret == 0);
-}
-
-void ThreadLock::initialize() {
-    return;
 }
 
 void ThreadLock::ThreadOnce(ThreadOnceToken_t *onceToken, void (*callback)()) {

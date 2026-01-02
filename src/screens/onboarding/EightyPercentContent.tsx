@@ -35,7 +35,7 @@ const EightyPercentContent: React.FC<EightyPercentContentProps> = React.memo(
       useState<boolean>(true);
 
     const handleContinue = useCallback(() => {
-      updateProgressBar(0.7);
+      updateProgressBar(0.8);
     }, []);
 
     const requestReview = useCallback(async () => {

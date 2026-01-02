@@ -1,28 +1,24 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useCallback } from "react";
 import {
   StyleSheet,
   View,
   Text,
   Platform,
   ScrollView,
-  Animated,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import ButtonWithFeedback from "@reusable-components/buttons/ButtonWithFeedback";
-import ButtonWithoutFeedback from "@reusable-components/buttons/ButtonWithoutFeedback";
-import {
-  skinGoalArray,
-  SkinGoal,
-} from "@blue-prints/global-store/onboarding/onboarding";
 import { isIphoneSE } from "@/src/utilities/check-mobile-device";
-import * as Haptics from "expo-haptics";
-import { useOnboardingStore } from "@global-store/onboarding-store";
-import { scaleFont, scaleHeight } from "@utilities/responsive-design";
+import { scaleFont } from "@utilities/responsive-design";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useTranslation } from "@/src/hooks/use-translation";
+
+// Import the new SVG
+// @ts-ignore
+import InLovePana1 from "@assets/svg/In-love-pana-1.svg";
+import HeartBroken1 from "@assets/svg/Heartbroken-amico-1.svg";
 
 interface SixtyPercentContentProps {
   updateProgressBar: (progress: number) => void;
@@ -31,133 +27,82 @@ interface SixtyPercentContentProps {
 
 const SixtyPercentContent: React.FC<SixtyPercentContentProps> = React.memo(
   ({ updateProgressBar, continueLabel = "Continue" }) => {
-    const { skinGoal, updateOnboarding } = useOnboardingStore();
-    const { t } = useTranslation();
-
-    useEffect(() => {
-      setSelectedSkinGoal(skinGoal);
-    }, [skinGoal]);
-
-    const [selectedSkinGoal, setSelectedSkinGoal] =
-      useState<string[]>(skinGoal);
-
-    const handleSkinGoalSelect = useCallback(
-      async (skinGoalType: string) => {
-        await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        const updated = skinGoal.some((item) => item === skinGoalType)
-          ? skinGoal.filter((item) => item !== skinGoalType)
-          : [...skinGoal, skinGoalType];
-        updateOnboarding({ skinGoal: updated as SkinGoal });
-      },
-      [skinGoal]
-    );
-
     const handleContinue = useCallback(() => {
       updateProgressBar(0.7);
-    }, []);
-
-    const animatedValues = useRef(
-      Array.from({ length: skinGoalArray.length }, () => new Animated.Value(0))
-    ).current;
-
-    useEffect(() => {
-      animatedValues.forEach((animatedValue) => {
-        Animated.spring(animatedValue, {
-          toValue: 1,
-          useNativeDriver: true,
-          delay: 100,
-        }).start();
-      });
-    }, []);
-
-    const getSkinGoalTranslation = (goal: string) => {
-      const keyMap: Record<string, string> = {
-        "Reduce acne or post-acne": "reduceAcne",
-        "Minimize wrinkles, improve skin firmness": "minimizeWrinkles",
-        "Minimize pores": "minimizePores",
-        "Get rid of pigmentation": "ridPigmentation",
-        "Make skin more hydrated": "moreHydrated",
-        "Reduce redness and irritation": "reduceRedness",
-      };
-      const key = keyMap[goal] || "reduceAcne";
-      return t(`onboarding.skinGoals.${key}`);
-    };
+    }, [updateProgressBar]);
 
     return (
       <>
         <View style={styles.contentPart}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <Text style={styles.title}>{t("onboarding.skinGoal.title")}</Text>
-            <Text style={styles.subTitle}>
-              {t("onboarding.skinGoal.subtitle")}
+            <Text style={styles.title}>
+              Paired helps couples stay in love
             </Text>
-            {skinGoalArray.map((skinGoalType, index) => (
-              <Animated.View
-                key={skinGoalType}
-                style={{
-                  opacity: animatedValues[index],
-                  alignSelf: "center",
-                  transform: [
-                    {
-                      scale: animatedValues[index].interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [0.8, 1],
-                      }),
-                    },
-                  ],
-                }}
-              >
-                <ButtonWithoutFeedback
-                  text={getSkinGoalTranslation(skinGoalType)}
-                  onPress={() => handleSkinGoalSelect(skinGoalType)}
-                  marginTop={index === 0 ? hp(6) : hp(1.7)}
-                  fontFamily="CormorantGaramondBold"
-                  backgroundColor={
-                    selectedSkinGoal.includes(skinGoalType)
-                      ? "#7C8CD8"
-                      : "#ffffff"
-                  }
-                  textColor={
-                    selectedSkinGoal.includes(skinGoalType)
-                      ? "#FFFFFF"
-                      : "#000000"
-                  }
-                  viewStyle={{
-                    alignSelf: "center",
-                    borderRadius: 12,
-                    height: scaleHeight(69),
-                    shadowColor: "rgba(18, 55, 105, 0.06)",
-                    shadowOffset: {
-                      width: 1,
-                      height: 3,
-                    },
-                    shadowOpacity: 0.2,
-                    shadowRadius: 3,
-                    elevation: 4,
-                  }}
-                />
-              </Animated.View>
-            ))}
-            <View style={{ marginTop: hp(2) }}></View>
+
+            <View style={{ marginTop: hp(6) }} />
+
+            {/* CARD STACK */}
+            <View style={styles.stackContainer}>
+              {/* WITHOUT PAIRED (BACK CARD) */}
+              <View style={styles.withoutCard}>
+                <Text style={styles.withoutTitle}>Without Paired</Text>
+
+                {[
+                  "Stuck in the day to day routine",
+                  "Feeling detached",
+                  "Avoiding deeper conversations",
+                  "Not sure what steps to take to improve your relationship",
+                ].map((text) => (
+                  <View key={text} style={styles.bulletRow}>
+                    <View style={styles.minusCircle}>
+                      <Text style={styles.minus}>−</Text>
+                    </View>
+                    <Text style={styles.withoutText}>{text}</Text>
+                  </View>
+                ))}
+
+               <View style={styles.illustrationContainer}>
+                  <HeartBroken1 width="100%" height="100%" />
+                </View>
+              </View>
+
+              {/* WITH PAIRED (FRONT CARD) */}
+              <View style={styles.withCard}>
+                <Text style={styles.withTitle}>With Paired</Text>
+
+                {[
+                  "Getting to know each other on a deeper level",
+                  "Feeling connected every day",
+                  "Talking openly about sex, finances, conflict",
+                  "Reaching your relationship goals together",
+                ].map((text) => (
+                  <View key={text} style={styles.bulletRow}>
+                    <View style={styles.checkCircle}>
+                      <Text style={styles.check}>✓</Text>
+                    </View>
+                    <Text style={styles.withText}>{text}</Text>
+                  </View>
+                ))}
+
+                {/* SVG Illustration Replaces Placeholder */}
+                <View style={styles.illustrationContainer}>
+                  <InLovePana1 width="100%" height="100%" />
+                </View>
+              </View>
+            </View>
+
+            <View style={{ marginTop: hp(4) }} />
           </ScrollView>
         </View>
+
         <SafeAreaView edges={["bottom"]}>
           <View style={styles.buttonPart}>
             <ButtonWithFeedback
-              text={
-                continueLabel === "Continue"
-                  ? t("onboarding.continue")
-                  : continueLabel
-              }
+              text={continueLabel}
               marginTop={hp(1.5)}
-              backgroundColor={
-                selectedSkinGoal.length > 0 ? "#698D5F" : "#edefef"
-              }
-              textColor={selectedSkinGoal.length > 0 ? "#FFFFFF" : "#b8b9bb"}
-              viewStyle={{
-                alignSelf: "center",
-              }}
-              disabled={selectedSkinGoal.length === 0}
+              backgroundColor="#6A4CFF"
+              textColor="#FFFFFF"
+              viewStyle={{ alignSelf: "center" }}
               onPress={handleContinue}
             />
           </View>
@@ -170,28 +115,133 @@ const SixtyPercentContent: React.FC<SixtyPercentContentProps> = React.memo(
 const styles = StyleSheet.create({
   contentPart: {
     flex: Platform.OS === "ios" ? (isIphoneSE() ? 6 : 10) : 7.5,
+    backgroundColor: "#000000",
   },
   title: {
     fontFamily: "HelveticaBold",
-    fontSize: scaleFont(32),
-    color: "#1C1C1C",
+    fontSize: scaleFont(28),
+    color: "#FFFFFF",
     marginLeft: wp(5.5),
     marginTop: hp(0.6),
+    marginRight: wp(6),
+    lineHeight: scaleFont(36),
   },
-  subTitle: {
-    fontFamily: "HelveticaRegular",
-    fontSize: scaleFont(20),
-    color: "#1C1C1C",
-    marginLeft: wp(5.5),
-    marginTop: Platform.OS === "ios" ? hp(2) : hp(0.7),
+
+  /* STACK */
+  stackContainer: {
+    height: hp(55),
+    marginHorizontal: wp(5.5),
+  },
+
+  /* BACK CARD */
+  withoutCard: {
+    position: "absolute",
+    top: hp(4),
+    left: 0,
+    width: "55%",
+    backgroundColor: "#111111",
+    borderRadius: 20,
+    padding: wp(4),
+    borderWidth: 1,
+    borderColor: "#2A2A2A",
+    zIndex: 1,
+  },
+  withoutTitle: {
+    fontFamily: "HelveticaBold",
+    fontSize: scaleFont(16),
+    color: "#FFFFFF",
+    marginBottom: hp(2),
+  },
+
+  withCard: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    width: "55%",
+    backgroundColor: "#E6E0FF",
+    borderRadius: 20,
+    padding: wp(4),
+    zIndex: 2,
+
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 16,
+    elevation: 12,
+  },
+  withTitle: {
+    fontFamily: "HelveticaBold",
+    fontSize: scaleFont(16),
+    color: "#000000",
+    marginBottom: hp(2),
+  },
+
+  bulletRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    marginBottom: hp(1.6),
+  },
+
+  minusCircle: {
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    borderWidth: 1.5,
+    borderColor: "#999999",
+    alignItems: "center",
+    justifyContent: "center",
     marginRight: wp(2),
   },
+  minus: {
+    color: "#999999",
+    fontSize: 14,
+    fontWeight: "bold",
+  },
+  checkCircle: {
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    backgroundColor: "#6A4CFF",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: wp(2),
+  },
+  check: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "bold",
+  },
+
+  withoutText: {
+    color: "#AAAAAA",
+    fontSize: scaleFont(13),
+    flex: 1,
+  },
+  withText: {
+    color: "#000000",
+    fontSize: scaleFont(13),
+    flex: 1,
+  },
+
+  /* Updated container for SVG (removed background color) */
+  illustrationContainer: {
+    height: hp(14),
+    marginTop: hp(2),
+    borderRadius: 12,
+    overflow: "hidden", // Ensures SVG stays within rounded corners
+  },
+  
+  illustrationPlaceholderMuted: {
+    height: hp(14),
+    marginTop: hp(2),
+    borderRadius: 12,
+    backgroundColor: "#1A1A1A",
+  },
+
   buttonPart: {
-    // flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
     borderTopWidth: 1.5,
-    borderTopColor: "#ededed",
     paddingBottom: hp(2),
   },
 });

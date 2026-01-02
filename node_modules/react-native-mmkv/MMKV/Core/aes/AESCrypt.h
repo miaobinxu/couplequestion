@@ -24,15 +24,11 @@
 
 #include "../MMKVPredef.h"
 #include <cstddef>
-#include <cstdint>
 
 #ifdef MMKV_DISABLE_CRYPT
 
 namespace mmkv {
-class AESCrypt {
-public:
-    static uint32_t randomItemSizeHolder(uint32_t size);
-};
+class AESCrypt;
 }
 
 #else
@@ -91,7 +87,6 @@ public:
     void getKey(void *output) const;
 
     static void fillRandomIV(void *vector);
-    static uint32_t randomItemSizeHolder(uint32_t size);
 
     // just forbid it for possibly misuse
     explicit AESCrypt(const AESCrypt &other) = delete;
